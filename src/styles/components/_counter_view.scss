@@ -1,0 +1,44 @@
+.container {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: $c-midnight;
+}
+
+.userContainer {
+	justify-content: center;
+	align-items: center;
+}
+
+.userProfilePhoto {
+	@include circle;
+	align-self: center;
+}
+
+.counterButton {
+	@include circle;
+	background-color: $c-blue;
+	align-items: center;
+	justify-content: center;
+	margin: 20;
+}
+
+.counter {
+	color: $c-white;
+	font-size: 20;
+	text-align: center;
+}
+
+.welcome {
+	text-align: center;
+	color: $c-black;
+	margin-bottom: 5;
+	padding: 5;
+}
+
+.linkButton {
+	text-align: center;
+	color: $c-white;
+	margin-bottom: 10;
+	padding: 5;
+}

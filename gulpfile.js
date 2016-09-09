@@ -13,20 +13,14 @@ var nativeCss = require('react-native-css');
 
 // import { selectBook } from '../actions/index';
 
-var dist = './dist/';
-
-/** Clean */
-gulp.task('clean', function () {
-	rimraf.sync(dist);
-});
+var dist = './src/styles';
 
 /** Stylesheets */
 gulp.task('styles', function () {
-	var out = gulp.src('./src/css/main.scss')
+	var out = gulp.src('./src/styles/main.scss')
 		.pipe($.cssGlobbing({
 			extensions: ['.scss'],
 		}))
-		.pipe($.sourcemaps.init())
 		.pipe($.sass({
 			style: 'expanded',
 		}))
@@ -35,49 +29,27 @@ gulp.task('styles', function () {
 			$.notify().write(e);
 		});
 
-	out.pipe(gulp.dest(dist + 'css'));
-
-	return out.pipe($.rev())
-		.pipe(gulp.dest(dist + 'css'))
-		.pipe($.rev.manifest('css/manifest.json', {
-			merge: true,
-			base: '',
-		}))
-		.pipe(gulp.dest(dist));
-});
-
-/** Copy */
-gulp.task('copy', function () {
-	return gulp.src([
-		'src/**/**',
-	], {
-		base: 'src',
-	})
-	.pipe(gulp.dest(dist));
+	return out.pipe(gulp.dest(dist));
 });
 
 gulp.task('refresh', shell.task([
-	'react-native-css -i ./dist/css/main.css -o ./dist/styles.js',
-	'/usr/bin/osascript -e \'tell application "Simulator"\' -e "activate" -e \'tell application "System Events"\' -e \'keystroke "r" using {command down}\' -e "end tell" -e "end tell"'
+	'react-native-css -i ./src/styles/main.css -o ./src/styles.js'
 ]));
 
 gulp.task('shell', shell.task([
 	'react-native run-ios',
-	'react-native-css -i ./dist/css/main.css -o ./dist/styles.js',
+	'react-native-css -i ./src/styles/main.css -o ./src/styles.js'
 ]));
 
 
 /** Livereload */
-gulp.task('watch', ['clean', 'copy', 'styles', 'shell'], function () {
-
-	/** Watch for PHP changes */
-	gulp.watch('src/**/*', ['copy', 'styles', 'refresh']);
+gulp.task('watch', ['styles', 'shell'], function () {
 
 	/** Watch for SASS changes */
-	gulp.watch('src/css/*.scss', ['copy', 'styles', 'refresh']);
+	gulp.watch('src/styles/**/*.scss', ['styles', 'refresh']);
 
 	gulp.watch(
-		dist + '/**/*.{jpg,png,svg,webp,css,js}'
+		dist + '/**/*.{jpg,png,svg,webp,css,scss,js}'
 	).on('change', function (file) {
 		$.livereload.changed(file.path);
 	})
@@ -85,9 +57,7 @@ gulp.task('watch', ['clean', 'copy', 'styles', 'shell'], function () {
 
 /** Build */
 gulp.task('build', [
-	'clean',
-	'copy',
-	'styles',
+	'styles'
 ]);
 
 gulp.task('default', ['build']);

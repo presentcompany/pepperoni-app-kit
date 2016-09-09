@@ -1,0 +1,45 @@
+/* No files to import found in pages//** */
+/* No files to import found in sections//** */
+.container {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #34495e; }
+
+.userContainer {
+  justify-content: center;
+  align-items: center; }
+
+.userProfilePhoto {
+  border-width: 0;
+  border-radius: 40;
+  width: 80;
+  height: 80;
+  align-self: center; }
+
+.counterButton {
+  border-width: 0;
+  border-radius: 40;
+  width: 80;
+  height: 80;
+  background-color: #2ecc71;
+  align-items: center;
+  justify-content: center;
+  margin: 20; }
+
+.counter {
+  color: #FFF;
+  font-size: 20;
+  text-align: center; }
+
+.welcome {
+  text-align: center;
+  color: #000;
+  margin-bottom: 5;
+  padding: 5; }
+
+.linkButton {
+  text-align: center;
+  color: #FFF;
+  margin-bottom: 10;
+  padding: 5; }

@@ -1,6 +1,6 @@
 import {Provider} from 'react-redux';
 import store from './dist/redux/store';
-import AppViewContainer from './src/modules/AppViewContainer';
+import AppViewContainer from './dist/modules/AppViewContainer';
 
 import React from 'react';
 import {AppRegistry} from 'react-native';

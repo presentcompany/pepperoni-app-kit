@@ -22,7 +22,7 @@ gulp.task('clean', function () {
 
 /** Stylesheets */
 gulp.task('styles', function () {
-	var out = gulp.src('./css/main.scss')
+	var out = gulp.src('./src/css/main.scss')
 		.pipe($.cssGlobbing({
 			extensions: ['.scss'],
 		}))
@@ -39,7 +39,7 @@ gulp.task('styles', function () {
 
 	return out.pipe($.rev())
 		.pipe(gulp.dest(dist + 'css'))
-		.pipe($.rev.manifest(dist + 'css/manifest.json', {
+		.pipe($.rev.manifest('css/manifest.json', {
 			merge: true,
 			base: '',
 		}))
@@ -56,11 +56,27 @@ gulp.task('copy', function () {
 	.pipe(gulp.dest(dist));
 });
 
+gulp.task('shell', shell.task([
+	'react-native run-ios',
+	'react-native-css -i ./dist/css/main.css -o ./dist/styles.js'
+]))
+
+
 /** Livereload */
-gulp.task('watch', ['clean', 'copy', 'styles'], shell.task([
-  'react-native run-ios',
-  'react-native-css -i ./dist/css/main.css -o ./dist/styles.js --watch'
-]));
+gulp.task('watch', ['clean', 'copy', 'styles', 'shell'], function () {
+
+	/** Watch for PHP changes */
+	gulp.watch('src/**/*', ['copy', 'styles', 'shell']);
+
+	/** Watch for SASS changes */
+	gulp.watch('src/css/*.scss', ['copy', 'styles', 'shell']);
+
+	gulp.watch(
+		dist + '/**/*.{jpg,png,svg,webp,css,js}'
+	).on('change', function (file) {
+		$.livereload.changed(file.path);
+	})
+});
 
 /** Build */
 gulp.task('build', [

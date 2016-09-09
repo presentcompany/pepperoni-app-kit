@@ -56,20 +56,25 @@ gulp.task('copy', function () {
 	.pipe(gulp.dest(dist));
 });
 
+gulp.task('refresh', shell.task([
+	'react-native-css -i ./dist/css/main.css -o ./dist/styles.js',
+	'/usr/bin/osascript -e \'tell application "Simulator"\' -e "activate" -e \'tell application "System Events"\' -e \'keystroke "r" using {command down}\' -e "end tell" -e "end tell"'
+]));
+
 gulp.task('shell', shell.task([
 	'react-native run-ios',
-	'react-native-css -i ./dist/css/main.css -o ./dist/styles.js'
-]))
+	'react-native-css -i ./dist/css/main.css -o ./dist/styles.js',
+]));
 
 
 /** Livereload */
 gulp.task('watch', ['clean', 'copy', 'styles', 'shell'], function () {
 
 	/** Watch for PHP changes */
-	gulp.watch('src/**/*', ['copy', 'styles', 'shell']);
+	gulp.watch('src/**/*', ['copy', 'styles', 'refresh']);
 
 	/** Watch for SASS changes */
-	gulp.watch('src/css/*.scss', ['copy', 'styles', 'shell']);
+	gulp.watch('src/css/*.scss', ['copy', 'styles', 'refresh']);
 
 	gulp.watch(
 		dist + '/**/*.{jpg,png,svg,webp,css,js}'

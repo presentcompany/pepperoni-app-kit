@@ -16,4 +16,4 @@ const AppTemplate = React.createClass({
   }
 });
 
-AppRegistry.registerComponent('AppTemplate', () => AppTemplate);
+AppRegistry.registerComponent('PepperoniAppTemplate', () => AppTemplate);

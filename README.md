@@ -87,6 +87,8 @@ For this application, to reload the app, press `Cmd + R` in the iOS Simulator, t
 
 To reload the `state` components, click the bottom right white circle to bring up the options and select `Clear state` then `Cmd + R`.
 
+To view the console/JS Debugging, press `Cmd + D`. This will bring up the in-app dev menu. Select `Debug JS Remotely` and go to `http://localhost:8081/debugger-ui`. The `Developer Tools` window on this page will display all your `console.log` outputs.
+
 ## Reading Material
 
 This repo encompasses several new features/ideas which are referenced below:

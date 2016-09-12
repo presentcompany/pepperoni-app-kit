@@ -10,6 +10,7 @@ import store from '../redux/store';
 import DeveloperMenu from '../components/DeveloperMenu';
 
 class AppView extends Component {
+
   render() {
     return (
       <View style={{flex: 1}}>

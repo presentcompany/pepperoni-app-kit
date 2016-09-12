@@ -4,7 +4,7 @@
 }
 
 .mainButton {
-	width: 90px;
+	width: 91px;
 	height: 94px;
 }
 
@@ -17,16 +17,9 @@
 
 .imageContainer {
 	flex: 1;
+	height: 170px;
 	justify-content: center;
 	align-items: center;
-}
-
-.imageContainerFirst {
-	margin-top: 25px;
-}
-
-.imageContainerLast {
-	margin-bottom: 25px;
 }
 
 .mainText {

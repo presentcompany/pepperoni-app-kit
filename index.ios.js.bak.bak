@@ -5,7 +5,7 @@ import AppViewContainer from './src/modules/AppViewContainer';
 import React from 'react';
 import {AppRegistry} from 'react-native';
 
-const PrescoNativeTemplate = React.createClass({
+const PepperoniAppTemplate = React.createClass({
 
   render() {
     return (
@@ -16,4 +16,4 @@ const PrescoNativeTemplate = React.createClass({
   }
 });
 
-AppRegistry.registerComponent('PrescoNativeTemplate', () => PrescoNativeTemplate);
+AppRegistry.registerComponent('PepperoniAppTemplate', () => PepperoniAppTemplate);

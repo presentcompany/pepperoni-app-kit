@@ -1,4 +1,4 @@
-rootProject.name = 'PrescoNativeTemplate'
+rootProject.name = 'PrescoTemplate'
 
 include ':app'
 include ':react-native-lock'

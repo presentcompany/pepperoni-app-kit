@@ -6,7 +6,7 @@ import React from 'react';
 import {AppRegistry, BackAndroid} from 'react-native';
 import * as NavigationStateActions from './src/modules/navigation/NavigationState';
 
-const PrescoNativeTemplate = React.createClass({
+const PepperoniAppTemplate = React.createClass({
 
   componentWillMount() {
     BackAndroid.addEventListener('hardwareBackPress', this.navigateBack);
@@ -44,4 +44,4 @@ const PrescoNativeTemplate = React.createClass({
   }
 });
 
-AppRegistry.registerComponent('PrescoNativeTemplate', () => PrescoNativeTemplate);
+AppRegistry.registerComponent('PepperoniAppTemplate', () => PepperoniAppTemplate);

@@ -8,8 +8,8 @@ import {
   StyleSheet
 } from 'react-native';
 
-import AppRouter from '../AppRouter';
-import styles from '../../styles.js';
+import AppRouter from '../../AppRouter';
+import styles from '../../../styles.js';
 
 class CalculatorSelectorView extends Component {
   
@@ -32,7 +32,7 @@ class CalculatorSelectorView extends Component {
           <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
             <Image
               style={styles.mainButton}
-              source={require('../../images/borrow-button.png')}
+              source={require('../../../images/borrow-button.png')}
             />
           </TouchableHighlight>
           <Text style={styles.mainText}>How much can I borrow?</Text>
@@ -41,7 +41,7 @@ class CalculatorSelectorView extends Component {
           <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={this._onPressButtonTwo}>
             <Image
               style={styles.mainButton}
-              source={require('../../images/repayments-button.png')}
+              source={require('../../../images/repayments-button.png')}
             />
           </TouchableHighlight>
           <Text style={styles.mainText}>What are my repayments?</Text>
@@ -50,7 +50,7 @@ class CalculatorSelectorView extends Component {
           <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={this._onPressButtonThree}>
             <Image
               style={styles.mainButton}
-              source={require('../../images/stamp-duty-button.png')}
+              source={require('../../../images/stamp-duty-button.png')}
             />
           </TouchableHighlight>
           <Text style={styles.mainText}>What is my stamp duty?</Text>

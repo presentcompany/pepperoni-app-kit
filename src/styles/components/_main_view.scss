@@ -1,0 +1,30 @@
+.mainBackground {
+	background-color: $c-blue;
+	flex: 1;
+}
+
+.mainButton {
+	width: 91px;
+	height: 94px;
+}
+
+.mainBorder {
+	flex: 1;
+	margin: 0 10px 10px;
+	border: 2px solid $c-white;
+	border-radius: 15px;
+}
+
+.imageContainer {
+	flex: 1;
+	height: 170px;
+	justify-content: center;
+	align-items: center;
+}
+
+.mainText {
+	margin: 20px 0;
+
+	color: $c-white;
+	font-size: 21;
+}

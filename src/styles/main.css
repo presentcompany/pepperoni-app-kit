@@ -1,5 +1,40 @@
+.container {
+  flex: 1; }
+
+.header {
+  height: 57px; }
+
+.headerLogo {
+  width: 111px;
+  height: 27px; }
+
+.headerHomeButton {
+  position: absolute;
+  top: 14px;
+  right: 32px;
+  width: 26px;
+  height: 29px; }
+
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex: 1; }
+
+.center {
+  margin: auto;
+  width: 50%; }
+
 /* No files to import found in pages//** */
 /* No files to import found in sections//** */
+.mainBorder {
+  display: flex;
+  overflow: hidden; }
+
+.wrapper {
+  margin-top: -12px; }
+
 .container {
   flex: 1;
   justify-content: center;
@@ -22,7 +57,7 @@
   border-radius: 40;
   width: 80;
   height: 80;
-  background-color: #2ecc71;
+  background-color: #22B7EE;
   align-items: center;
   justify-content: center;
   margin: 20; }
@@ -43,3 +78,28 @@
   color: #FFF;
   margin-bottom: 10;
   padding: 5; }
+
+.mainBackground {
+  background-color: #22B7EE;
+  flex: 1; }
+
+.mainButton {
+  width: 91px;
+  height: 94px; }
+
+.mainBorder {
+  flex: 1;
+  margin: 0 10px 10px;
+  border: 2px solid #FFF;
+  border-radius: 15px; }
+
+.imageContainer {
+  flex: 1;
+  height: 170px;
+  justify-content: center;
+  align-items: center; }
+
+.mainText {
+  margin: 20px 0;
+  color: #FFF;
+  font-size: 21; }

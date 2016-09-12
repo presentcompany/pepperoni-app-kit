@@ -1,7 +1,6 @@
 /*eslint-disable react/prop-types*/
 
 import React from 'react';
-import IntroViewContainer from './intro/IntroViewContainer';
 import CounterViewContainer from './counter/CounterViewContainer';
 import ColorViewContainer from './colors/ColorViewContainer';
 
@@ -13,10 +12,6 @@ export default function AppRouter(props) {
 
   if (key === 'Counter') {
     return <CounterViewContainer />;
-  }
-
-  if (key === 'Intro') {
-    return <IntroViewContainer />;
   }
 
   if (key.indexOf('Color') === 0) {

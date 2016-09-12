@@ -60,6 +60,7 @@ const NavigationView = React.createClass({
     const {tabs} = this.props.navigationState;
     const tabKey = tabs.routes[tabs.index].key;
     const scenes = this.props.navigationState[tabKey];
+    console.log('page loaded');
     return (
       <View style={styles.container}>
         <NavigationCardStack

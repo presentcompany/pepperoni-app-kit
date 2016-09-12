@@ -8,7 +8,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-import AppRouter from '../AppRouter';
+import AppRouter from '../../AppRouter';
 
 var styles = StyleSheet.create({
   view: {

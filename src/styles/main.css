@@ -29,7 +29,8 @@
 /* No files to import found in pages//** */
 /* No files to import found in sections//** */
 .mainBorder {
-  display: flex; }
+  display: flex;
+  overflow: hidden; }
 
 .wrapper {
   margin-top: -12px; }

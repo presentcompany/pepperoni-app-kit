@@ -5,7 +5,8 @@ import {
   Switch, 
   TouchableHighlight, 
   View, 
-  StyleSheet
+  StyleSheet,
+  ScrollView
 } from 'react-native';
 
 import Swiper from 'react-native-swiper';
@@ -14,6 +15,7 @@ import AppRouter from '../AppRouter';
 import initstyles from '../../styles.js';
 import CalculatorSelectorView from '../calculator-selector/CalculatorSelectorView.js';
 import CalculatorLoadView from '../calculator-load/CalculatorLoadView.js';
+import CalculatorResultsView from '../calculator-results/CalculatorResultsView.js';
 
 var styles = StyleSheet.create({
   container: {
@@ -59,7 +61,9 @@ class BorderBoxView extends Component {
               <CalculatorLoadView />
             </View>
             <View style={styles.slide3}>
-              <CalculatorSelectorView />
+              <ScrollView showsVerticalScrollIndicator={false}>
+                <CalculatorResultsView />
+              </ScrollView>
             </View>
           </Swiper>
         </View>

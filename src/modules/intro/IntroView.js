@@ -1,4 +1,5 @@
 import * as IntroState from './IntroState';
+import * as TextState from '../text/TextState';
 import * as NavigationState from '../../modules/navigation/NavigationState';
 import React, {PropTypes} from 'react';
 import {
@@ -6,6 +7,7 @@ import {
   TouchableOpacity,
   Image,
   Text,
+  TextInput,
   View
 } from 'react-native';
 import styles from '../../styles.js';
@@ -16,7 +18,8 @@ const IntroView = React.createClass({
     userName: PropTypes.string,
     userProfilePhoto: PropTypes.string,
     loading: PropTypes.bool.isRequired,
-    dispatch: PropTypes.func.isRequired
+    dispatch: PropTypes.func.isRequired,
+    text: PropTypes.object
   },
   increment() {
     this.props.dispatch(IntroState.increment());
@@ -32,6 +35,9 @@ const IntroView = React.createClass({
       key: 'Color',
       title: 'Color Screen'
     }));
+  },
+  updateText(text) {
+    this.props.dispatch(TextState.change(text))
   },
   pushHome() {
     this.props.dispatch(NavigationState.pushRoute({
@@ -56,7 +62,12 @@ const IntroView = React.createClass({
             {'Push Home State'}
           </Text>
         </TouchableOpacity>
-         <TouchableOpacity onPress={this.switchHome} accessible={true}>
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          onChangeText={(text) => this.updateText({text})}
+          value={this.props.text.text}
+        />
+        <TouchableOpacity onPress={this.switchHome} accessible={true}>
           <Text style={styles.linkButton}>
             {'Switch Home State'}
           </Text>

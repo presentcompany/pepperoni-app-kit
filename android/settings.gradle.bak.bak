@@ -1,4 +1,4 @@
-rootProject.name = 'PrescoTemplate'
+rootProject.name = 'PepperoniAppTemplate'
 
 include ':app'
 include ':react-native-lock'

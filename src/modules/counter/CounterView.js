@@ -63,7 +63,15 @@ const CounterView = React.createClass({
     return (
       <View style={styles.container}>
 
-        {this.renderUserInfo()}
+        <Image
+          style={
+            {
+              width: 154,
+              height: 60
+            }
+          }
+          source={require('../../images/oxygen.png')}
+        />
 
         <TouchableOpacity
           onPress={this.increment}

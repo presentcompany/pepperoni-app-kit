@@ -1,0 +1,32 @@
+.container {
+	flex: 1;
+}
+
+.header {
+	height: 57px;
+}
+
+.headerLogo {
+	width: 111px;
+	height: 27px;
+}
+
+.headerHomeButton {
+	position: absolute;
+	top: 14px;
+	right: 32px;
+	width: 26px;
+	height: 29px;
+}
+
+.flexContainer {
+	display: flex;
+	flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.center {
+	@include center;
+}

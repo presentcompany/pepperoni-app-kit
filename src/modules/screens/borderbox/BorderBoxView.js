@@ -11,8 +11,8 @@ import {
 
 import Swiper from 'react-native-swiper';
 
-import AppRouter from '../AppRouter';
-import initstyles from '../../styles.js';
+import AppRouter from '../../AppRouter';
+import initstyles from '../../../styles.js';
 import CalculatorSelectorView from '../calculator-selector/CalculatorSelectorView.js';
 import CalculatorLoadView from '../calculator-load/CalculatorLoadView.js';
 import CalculatorView from '../calculator/CalculatorView.js';

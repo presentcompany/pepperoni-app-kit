@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 
 import AppRouter from '../../AppRouter';
+import CalculatorVerificationView from '../calculator-verification/CalculatorVerificationView';
+
 
 var styles = StyleSheet.create({
   view: {
@@ -26,6 +28,13 @@ var styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  questionContainer: {
+    marginTop: 40,
+  },
+  verficationContainer: {
+    marginTop: 4,
+    marginBottom: -4,
   }
 })
 
@@ -38,31 +47,36 @@ class CalculatorLoadView extends Component {
   render() {
     return (
       <View>
-        <View>
-          <Text style={styles.text}>I need a loan to...</Text>
+        <View style={styles.verficationContainer}>
+          <CalculatorVerificationView />
+        </View> 
+        <View style={styles.questionContainer}>  
+          <View>
+            <Text style={styles.text}>I need a loan to...</Text>
+          </View>
+          <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <View style={styles.view}>
+              <Text style={styles.text}>Buy my first home</Text>
+            </View>
+          </TouchableHighlight>
+          <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <View style={styles.view}>
+              <Text style={styles.text}>Buy my next home</Text>
+            </View>
+          </TouchableHighlight>
+          <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <View style={styles.view}>
+              <Text style={styles.text}>Refinance an</Text>
+              <Text style={styles.text}>existing loan</Text>
+            </View>
+          </TouchableHighlight>
+          <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <View style={styles.view}>
+              <Text style={styles.text}>Buy an investment</Text>
+              <Text style={styles.text}>property</Text>
+            </View>
+          </TouchableHighlight>
         </View>
-        <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
-          <View style={styles.view}>
-            <Text style={styles.text}>Buy my first home</Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
-          <View style={styles.view}>
-            <Text style={styles.text}>Buy my next home</Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
-          <View style={styles.view}>
-            <Text style={styles.text}>Refinance an</Text>
-            <Text style={styles.text}>existing loan</Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
-          <View style={styles.view}>
-            <Text style={styles.text}>Buy an investment</Text>
-            <Text style={styles.text}>property</Text>
-          </View>
-        </TouchableHighlight>
       </View>
     );
   }

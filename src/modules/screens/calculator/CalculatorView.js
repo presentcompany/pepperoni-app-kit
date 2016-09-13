@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import AppRouter from '../../AppRouter';
+import CalculatorVerificationView from '../calculator-verification/CalculatorVerificationView';
 
 var styles = StyleSheet.create({
   rowContainer: {
@@ -67,6 +68,10 @@ var styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'right',
+  },
+  verficationContainer: {
+    marginTop: 40,
+    marginBottom: -40,
   }
 })
 
@@ -79,6 +84,9 @@ class CalculatorView extends Component {
   render() {
     return (
       <View>
+        <View style={styles.verficationContainer}>
+          <CalculatorVerificationView  />
+        </View>
         <View>
           <Text style={styles.text}>What is your annual</Text>
           <Text style={styles.text}>income before tax?</Text>

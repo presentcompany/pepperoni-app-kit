@@ -10,6 +10,8 @@ import {
 
 import AppRouter from '../../AppRouter';
 
+import CalculatorShareView from '../calculator-share/CalculatorShareView';
+
 var styles = StyleSheet.create({
   marginFirstChild: {
     marginTop: 150,
@@ -63,35 +65,40 @@ class CalculatorResultsView extends Component {
 
   render() {
     return (
-      <View style={[styles.margins, styles.marginFirstChild]}>
-        <View style={styles.margins}>
-          <Text style={[styles.text]}>You may be able to</Text>
-          <Text style={[styles.text, styles.marginBottom]}>borrow up to...</Text>
-        </View>
-        <View style={[styles.blueBox, styles.marginBottom]}>
-          <Text style={styles.valueText}>$1,125,802</Text>
-        </View>
-        <View style={[styles.view, styles.marginTop]}>
-          <Text style={styles.text}>At 1.5% p.a., your</Text>
-          <Text style={styles.text}>monthly repayments</Text>
-          <Text style={[styles.text, styles.marginBottom]}>will be...</Text>
-        </View>
-        <View style={[styles.blueBox]}>
-          <Text style={[styles.valueText]}>$3,885</Text>
-        </View>
-        <View style={[styles.view, styles.marginTop]}>
-          <Text style={styles.text}>At 3.0% p.a., your</Text>
-          <Text style={styles.text}>monthly repayments</Text>
-          <Text style={[styles.text, styles.marginBottom]}>will be...</Text>
-        </View>
-        <View style={styles.blueBox}>
-          <Text style={styles.valueText}>$4,746</Text>
-        </View>
-        <TouchableHighlight style={[styles.headerHomeButton, styles.marginTop, styles.marginLastChild]} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
-          <View style={styles.button}>
-            <Text style={[styles.text]}>Find a broker</Text>          
+      <View>
+        <View>
+          <CalculatorShareView />
+        </View> 
+        <View style={[styles.margins, styles.marginFirstChild]}>
+          <View style={styles.margins}>
+            <Text style={[styles.text]}>You may be able to</Text>
+            <Text style={[styles.text, styles.marginBottom]}>borrow up to...</Text>
           </View>
-        </TouchableHighlight>
+          <View style={[styles.blueBox, styles.marginBottom]}>
+            <Text style={styles.valueText}>$1,125,802</Text>
+          </View>
+          <View style={[styles.view, styles.marginTop]}>
+            <Text style={styles.text}>At 1.5% p.a., your</Text>
+            <Text style={styles.text}>monthly repayments</Text>
+            <Text style={[styles.text, styles.marginBottom]}>will be...</Text>
+          </View>
+          <View style={[styles.blueBox]}>
+            <Text style={[styles.valueText]}>$3,885</Text>
+          </View>
+          <View style={[styles.view, styles.marginTop]}>
+            <Text style={styles.text}>At 3.0% p.a., your</Text>
+            <Text style={styles.text}>monthly repayments</Text>
+            <Text style={[styles.text, styles.marginBottom]}>will be...</Text>
+          </View>
+          <View style={styles.blueBox}>
+            <Text style={styles.valueText}>$4,746</Text>
+          </View>
+          <TouchableHighlight style={[styles.headerHomeButton, styles.marginTop, styles.marginLastChild]} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <View style={styles.button}>
+              <Text style={[styles.text]}>Find a broker</Text>          
+            </View>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }

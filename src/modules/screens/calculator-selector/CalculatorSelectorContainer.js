@@ -1,10 +1,10 @@
 import {connect} from 'react-redux';
-import {pushRoute} from './CalculatorSelectorViewState';
+import {pushRoute} from './CalculatorSelectorState';
 import CalculatorSelectorView from './CalculatorSelectorView';
 
 export default connect(
   state => ({
-    calculatorSelectorViewState: state.get('calculatorSelectorViewState')
+    calculatorSelectorViewState: state.get('calculatorSelectorState')
   }),
   dispatch => ({
     pushRoute(index) {

@@ -14,7 +14,7 @@ import PageControl from'react-native-page-control';
 import AppRouter from '../AppRouter';
 import styles from '../../styles.js';
 import HeaderView from '../header/HeaderView.js'
-import BorderBoxView from '../screens/borderbox/BorderBoxView.js'
+import BorderBoxView from '../screens/borderbox/BorderBoxContainer'
 
 class MainView extends Component {
   _onPressButton() {

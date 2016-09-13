@@ -4,6 +4,7 @@ import {
   Image,
   Switch, 
   TouchableHighlight, 
+  TouchableOpacity,
   View, 
   StyleSheet,
   ScrollView
@@ -13,10 +14,10 @@ import Swiper from 'react-native-swiper';
 
 import AppRouter from '../../AppRouter';
 import initstyles from '../../../styles.js';
-import CalculatorSelectorView from '../calculator-selector/CalculatorSelectorView.js';
-import CalculatorLoadView from '../calculator-load/CalculatorLoadView.js';
-import CalculatorView from '../calculator/CalculatorView.js';
-import CalculatorResultsView from '../calculator-results/CalculatorResultsView.js';
+import CalculatorSelectorContainer from '../calculator-selector/CalculatorSelectorContainer';
+import CalculatorLoadContainer from '../calculator-load/CalculatorLoadContainer';
+import CalculatorContainer from '../calculator/CalculatorContainer';
+import CalculatorResultsContainer from '../calculator-results/CalculatorResultsContainer';
 
 var styles = StyleSheet.create({
   container: {
@@ -60,33 +61,33 @@ var styles = StyleSheet.create({
   }
 })
 
-class BorderBoxView extends Component {
+const BorderBoxView = React.createClass({
 
   render() {
     return (
         <View style={[initstyles.mainBorder, styles.container]}> 
           <Swiper style={initstyles.wrapper} showsButtons={false} loop={false}>
             <View style={styles.slide1}>
-              <CalculatorSelectorView />
+              <CalculatorSelectorContainer />
             </View>
             <View style={styles.slide4}>
-              <CalculatorView />
+              <CalculatorContainer />
             </View>
             <View style={styles.slide5}>
-              <CalculatorView />
+              <CalculatorContainer />
             </View>
             <View style={styles.slide2}>
-              <CalculatorLoadView />
+              <CalculatorLoadContainer />
             </View>
             <View style={styles.slide3}>
               <ScrollView showsVerticalScrollIndicator={false}>
-                <CalculatorResultsView />
+                <CalculatorResultsContainer />
               </ScrollView>
             </View>
           </Swiper>
         </View>
     );
   }
-}
+});
 
 export default BorderBoxView;

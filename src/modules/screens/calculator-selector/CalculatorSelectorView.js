@@ -11,19 +11,27 @@ import {
 import AppRouter from '../../AppRouter';
 import styles from '../../../styles.js';
 
-class CalculatorSelectorView extends Component {
-  
+const CalculatorSelectorView = React.createClass({
+  propTypes: {
+    text: PropTypes.string.isRequired
+  },
+
   _onPressButton() {
-      console.log("Borrow tapped");
-  }
+    this.props.dispatch(
+        {
+          type: 'TextState/CHANGE',
+          text: 'new text'
+        }
+      );
+  },
 
   _onPressButtonTwo() {
-      console.log("Repayments tapped");
-  }
+      console.log(this.props);
+  },
 
   _onPressButtonThree() {
       console.log("Stamp duty tapped");
-  }
+  },
 
   render() {
     return (
@@ -58,6 +66,6 @@ class CalculatorSelectorView extends Component {
       </View>
     );
   }
-}
+});
 
 export default CalculatorSelectorView;

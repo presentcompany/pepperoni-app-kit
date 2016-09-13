@@ -2,6 +2,7 @@ import {Map} from 'immutable';
 import {combineReducers} from 'redux-loop';
 import NavigationStateReducer from '../modules/navigation/NavigationState';
 import AuthStateReducer from '../modules/auth/AuthState';
+import CalculatorStateReducer from '../modules/screens/calculator/CalculatorState';
 import CounterStateReducer from '../modules/counter/CounterState';
 import TextStateReducer from '../modules/text/TextState';
 import SessionStateReducer, {RESET_STATE} from '../modules/session/SessionState';
@@ -19,7 +20,9 @@ const reducers = {
 
   text: TextStateReducer,
 
-  session: SessionStateReducer
+  session: SessionStateReducer,
+
+  calculator: CalculatorStateReducer
 
 };
 

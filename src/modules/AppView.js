@@ -9,6 +9,8 @@ import * as SessionStateActions from '../modules/session/SessionState';
 import store from '../redux/store';
 import DeveloperMenu from '../components/DeveloperMenu';
 
+import HomeViewContainer from './home/HomeViewContainer';
+
 class AppView extends Component {
 
   render() {

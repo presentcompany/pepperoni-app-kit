@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import CounterView from './CounterView';
+import IntroView from './IntroView';
 
 export default connect(
   state => ({
@@ -9,4 +9,4 @@ export default connect(
     userName: state.getIn(['auth', 'currentUser', 'name']),
     userProfilePhoto: state.getIn(['auth', 'currentUser', 'picture'])
   })
-)(CounterView);
+)(IntroView);

@@ -1,4 +1,5 @@
 import * as CounterState from './CounterState';
+import * as TextState from '../text/TextState';
 import * as NavigationState from '../../modules/navigation/NavigationState';
 import React, {PropTypes} from 'react';
 import {
@@ -6,6 +7,7 @@ import {
   TouchableOpacity,
   Image,
   Text,
+  TextInput,
   View
 } from 'react-native';
 import styles from '../../styles.js';
@@ -16,7 +18,8 @@ const CounterView = React.createClass({
     userName: PropTypes.string,
     userProfilePhoto: PropTypes.string,
     loading: PropTypes.bool.isRequired,
-    dispatch: PropTypes.func.isRequired
+    dispatch: PropTypes.func.isRequired,
+    text: PropTypes.object
   },
   increment() {
     this.props.dispatch(CounterState.increment());
@@ -26,6 +29,9 @@ const CounterView = React.createClass({
   },
   random() {
     this.props.dispatch(CounterState.random());
+  },
+  updateText(text) {
+    this.props.dispatch(TextState.change(text))
   },
   bored() {
     this.props.dispatch(NavigationState.pushRoute({
@@ -72,7 +78,11 @@ const CounterView = React.createClass({
           }
           source={require('../../images/oxygen.png')}
         />
-
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          onChangeText={(text) => this.updateText({text})}
+          value={this.props.text.text}
+        />
         <TouchableOpacity
           onPress={this.increment}
           style={[styles.counterButton, loadingStyle]}>

@@ -96,63 +96,63 @@ class CalculatorView extends Component {
         </View>
         <View>
           <View style={styles.rowContainer}>
-            <TouchableHighlight>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>1</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>2</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>3</Text>
               </View>
             </TouchableHighlight>
           </View>
           <View style={styles.rowContainer}>
-            <TouchableHighlight>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>4</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>5</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>6</Text>
               </View>
             </TouchableHighlight>
           </View>
           <View style={styles.rowContainer}>
-            <TouchableHighlight>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>7</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>8</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>9</Text>
               </View>
             </TouchableHighlight>
           </View>
           <View style={styles.rowContainer}>
-            <TouchableHighlight>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
               <View style={[styles.zeroButton, styles.margin]}>
                 <Text style={[styles.buttonText]}>0</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
               <View style={[styles.cancelButton, styles.margin]}>
                 <Text style={[styles.buttonText]}>C</Text>
               </View>

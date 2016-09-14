@@ -4,6 +4,7 @@ import NavigationStateReducer from '../modules/navigation/NavigationState';
 import AuthStateReducer from '../modules/auth/AuthState';
 import CounterStateReducer from '../modules/counter/CounterState';
 import TextStateReducer from '../modules/text/TextState';
+import PageStateReducer from '../modules/page/PageState';
 import SessionStateReducer, {RESET_STATE} from '../modules/session/SessionState';
 
 const reducers = {
@@ -18,6 +19,8 @@ const reducers = {
   navigationState: NavigationStateReducer,
 
   text: TextStateReducer,
+
+  page: PageStateReducer,
 
   session: SessionStateReducer
 

@@ -1,20 +1,14 @@
 import React, {PropTypes, Component} from 'react';
 import {
-  Modal, 
   Text,
   Image,
-  Switch,
   Navigator, 
   TouchableHighlight, 
   View, 
   StyleSheet
 } from 'react-native';
 
-import PageControl from'react-native-page-control';
 import Dimensions from 'Dimensions';
-
-import AppRouter from '../AppRouter';
-
 import styles from '../../styles.js';
 
 const HomeView = React.createClass({
@@ -23,10 +17,6 @@ const HomeView = React.createClass({
     this.props.navigator.push({
       name: page,
     });
-  },
-
-  _loanCalculators() {
-      console.log("Loan Calculators");
   },
 
   render() {

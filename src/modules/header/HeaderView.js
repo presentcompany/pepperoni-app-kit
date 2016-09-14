@@ -6,13 +6,20 @@ import {
   StyleSheet
 } from 'react-native';
 
+import * as PageState from '../page/PageState';
 import AppRouter from '../AppRouter';
 import styles from '../../styles.js';
 
-class HeaderView extends Component {
-  _onPressButton() {
-      console.log("Home tapped");
-  }
+const HeaderView = React.createClass({
+  propTypes: {
+    page: PropTypes.number.isRequired
+  },
+
+  _onPressButton(page) {
+    this.props.dispatch(PageState.change({
+      page: page
+    }));
+  },
 
   render() {
     return (
@@ -22,7 +29,11 @@ class HeaderView extends Component {
               style={styles.headerLogo}
               source={require('../../images/oxygen_logo.png')}
           />
-          <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+          <TouchableHighlight 
+            style={styles.headerHomeButton} 
+            underlayColor='rgba(0,0,0,0)' 
+            onPress={()=>this._onPressButton(0)}
+          >
             <Image 
                 source={require('../../images/home-button.png')}
             />
@@ -31,6 +42,6 @@ class HeaderView extends Component {
       </View>
     );
   }
-}
+});
 
 export default HeaderView;

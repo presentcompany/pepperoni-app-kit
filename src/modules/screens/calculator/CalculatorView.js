@@ -36,10 +36,10 @@ var styles = StyleSheet.create({
     height: 70,
     backgroundColor: '#1989B2',
     marginLeft: 3,
-    marginRight: 3,
+    paddingRight: 13,
     marginTop: 9,
     justifyContent: 'center',
-    alignItems: 'center',
+
   },
   zeroButton: {
     flex: 2,
@@ -75,11 +75,24 @@ var styles = StyleSheet.create({
   }
 })
 
-class CalculatorView extends Component {
+const CalculatorView = React.createClass({
 
-  _onPressButton() {
-    console.log("button on the calculator loan was pressed");
-  }
+  propTypes: {
+    calculator: PropTypes.number.isRequired
+  },
+
+  _updateValue(add) {
+    this.props.dispatch({
+      type: 'CalculatorState/UPDATE_VALUE',
+      payload: add
+    });
+  },
+
+  _resetValue() {
+    this.props.dispatch({
+      type: 'CalculatorState/RESET_VALUE'
+    });
+  },
 
   render() {
     return (
@@ -91,68 +104,68 @@ class CalculatorView extends Component {
           <Text style={styles.text}>What is your annual</Text>
           <Text style={styles.text}>income before tax?</Text>
           <View style={[styles.income, styles.margin]}>
-            <Text style={styles.text}>$8</Text>
+            <Text style={styles.text}>${this.props.calculator}</Text>
           </View>
         </View>
         <View>
           <View style={styles.rowContainer}>
-            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={() => this._updateValue(1)}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>1</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={() => this._updateValue(2)}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>2</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={() => this._updateValue(3)}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>3</Text>
               </View>
             </TouchableHighlight>
           </View>
           <View style={styles.rowContainer}>
-            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={() => this._updateValue(4)}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>4</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={() => this._updateValue(5)}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>5</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={() => this._updateValue(6)}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>6</Text>
               </View>
             </TouchableHighlight>
           </View>
           <View style={styles.rowContainer}>
-            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={() => this._updateValue(7)}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>7</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={() => this._updateValue(8)}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>8</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={() => this._updateValue(9)}>
               <View style={[styles.button, styles.margin]}>
                 <Text style={[styles.buttonText]}>9</Text>
               </View>
             </TouchableHighlight>
           </View>
           <View style={styles.rowContainer}>
-            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={() => this._updateValue(0)}>
               <View style={[styles.zeroButton, styles.margin]}>
                 <Text style={[styles.buttonText]}>0</Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={() => this._resetValue()}>
               <View style={[styles.cancelButton, styles.margin]}>
                 <Text style={[styles.buttonText]}>C</Text>
               </View>
@@ -162,6 +175,7 @@ class CalculatorView extends Component {
       </View>
     );
   }
-}
+});
+
 
 export default CalculatorView;

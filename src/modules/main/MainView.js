@@ -13,8 +13,8 @@ import PageControl from'react-native-page-control';
 
 import AppRouter from '../AppRouter';
 import styles from '../../styles.js';
-import HeaderView from '../header/HeaderView.js'
-import BorderBoxView from '../screens/borderbox/BorderBoxContainer'
+import HeaderContainer from '../header/HeaderContainer'
+import BorderBoxContainer from '../screens/borderbox/BorderBoxContainer'
 
 class MainView extends Component {
   _onPressButton() {
@@ -32,8 +32,8 @@ class MainView extends Component {
   render() {
     return (
       <View style={styles.mainBackground}>
-        <HeaderView />
-        <BorderBoxView />
+        <HeaderContainer />
+        <BorderBoxContainer />
      </View>
     );
   }

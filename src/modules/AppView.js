@@ -1,7 +1,7 @@
 import React, {PropTypes, Component} from 'react';
 import {View, StyleSheet, ActivityIndicator} from 'react-native';
 import NavigationViewContainer from './navigation/NavigationViewContainer';
-import MainViewContainer from './main/MainViewContainer';
+import MainViewContainer from './main/MainContainer';
 import MainView from './main/MainView';
 import * as auth0 from '../services/auth0';
 import * as snapshotUtil from '../utils/snapshot';

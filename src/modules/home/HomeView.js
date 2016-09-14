@@ -14,6 +14,7 @@ import styles from '../../styles.js';
 const HomeView = React.createClass({
 
   _navigate(page){
+    console.log('here we go');
     this.props.navigator.push({
       name: page,
     });

@@ -2,7 +2,6 @@ import React, {PropTypes, Component} from 'react';
 import {
   Text,
   Image,
-  Navigator, 
   TouchableHighlight, 
   View, 
   StyleSheet
@@ -13,8 +12,12 @@ import styles from '../../styles.js';
 
 const HomeView = React.createClass({
 
+  propTypes: {
+    navigator: PropTypes.object.isRequired,
+  },
+
   _navigate(page){
-    console.log('here we go');
+    console.log(this.props);
     this.props.navigator.push({
       name: page,
     });
@@ -29,7 +32,7 @@ const HomeView = React.createClass({
                 source={require('../../images/oxygen_logo_white.png')}
           />
           <Text style={[inlineStyles.text, inlineStyles.bylineMargin]}>Home loads made simple.</Text>
-          <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Home')}>
+          <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Broker')}>
             <View style={inlineStyles.brokerStyles}>
               <Image 
                   style={inlineStyles.brokerIcon}

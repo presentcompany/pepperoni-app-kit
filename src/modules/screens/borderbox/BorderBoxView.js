@@ -11,7 +11,6 @@ import {
 
 import Swiper from 'react-native-swiper';
 
-import AppRouter from '../../AppRouter';
 import initstyles from '../../../styles.js';
 import * as PageState from '../../page/PageState';
 import CalculatorSelectorContainer from '../calculator-selector/CalculatorSelectorContainer';
@@ -45,11 +44,6 @@ const BorderBoxView = React.createClass({
   render() {
     return (
         <View style={[initstyles.mainBorder, styles.container]}>
-          <TouchableOpacity onPress={()=>this._onPressButton(2)}>
-            <Text>
-              Go to page 2
-            </Text>
-          </TouchableOpacity>
           <Swiper 
             ref='swiper' 
             style={initstyles.wrapper} 

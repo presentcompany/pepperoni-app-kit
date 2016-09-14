@@ -27,7 +27,9 @@ const NavigationView = React.createClass({
       <Navigator
         style={{ flex:1 }}
         initialRoute={{ name: 'Home' }}
-        renderScene={ this.renderScene } />
+        renderScene={ this.renderScene } 
+      />
+
     );
   }
 });

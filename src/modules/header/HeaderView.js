@@ -1,6 +1,7 @@
 import React, {PropTypes, Component} from 'react';
 import {
   Image,
+  Navigator,
   TouchableHighlight, 
   View, 
   StyleSheet
@@ -15,10 +16,10 @@ const HeaderView = React.createClass({
     page: PropTypes.number.isRequired
   },
 
-  _onPressButton(page) {
-    this.props.dispatch(PageState.change({
-      page: page
-    }));
+  _navigate(page){
+    this.props.navigator.push({
+      name: page,
+    });
   },
 
   render() {
@@ -32,7 +33,7 @@ const HeaderView = React.createClass({
           <TouchableHighlight 
             style={styles.headerHomeButton} 
             underlayColor='rgba(0,0,0,0)' 
-            onPress={()=>this._onPressButton(0)}
+            onPress={()=>this._navigate('Home')}
           >
             <Image 
                 source={require('../../images/home-button.png')}

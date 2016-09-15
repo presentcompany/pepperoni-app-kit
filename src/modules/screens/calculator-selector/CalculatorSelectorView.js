@@ -8,7 +8,6 @@ import {
   StyleSheet
 } from 'react-native';
 
-import AppRouter from '../../AppRouter';
 import styles from '../../../styles.js';
 
 const CalculatorSelectorView = React.createClass({

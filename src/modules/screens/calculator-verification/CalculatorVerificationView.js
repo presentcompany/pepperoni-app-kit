@@ -8,8 +8,6 @@ import {
   StyleSheet
 } from 'react-native';
 
-import AppRouter from '../../AppRouter';
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

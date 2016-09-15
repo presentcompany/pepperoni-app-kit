@@ -21,6 +21,8 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
+src/styles/main.css
+src/styles.js
 
 # Android/IJ
 #

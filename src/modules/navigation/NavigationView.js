@@ -22,12 +22,23 @@ const NavigationView = React.createClass({
     })
   },
 
+  configureScene(route, routeStack) {
+    if(route.name === 'Home') {
+      return Navigator.SceneConfigs.FloatFromLeft;
+    } else if (route.name === 'Broker' || route.name === 'Borrow' || route.name === 'Calculators') {
+      return Navigator.SceneConfigs.FloatFromRight;
+    } else {
+      return Navigator.SceneConfigs.FloatFromRight;
+    }
+  },
+
   render() {
     return (
       <Navigator
         style={{ flex:1 }}
         initialRoute={{ name: 'Home' }}
-        renderScene={ this.renderScene } 
+        renderScene={ this.renderScene }
+        configureScene={ this.configureScene }
       />
 
     );

@@ -4,6 +4,7 @@ import {
   View
 } from 'react-native';
 
+import styles from '../../styles.js';
 import AppRouter from '../AppRouter';
 
 const NavigationView = React.createClass({
@@ -35,7 +36,7 @@ const NavigationView = React.createClass({
   render() {
     return (
       <Navigator
-        style={{ flex:1 }}
+        style={styles.navigator}
         initialRoute={{ name: 'Home' }}
         renderScene={ this.renderScene }
         configureScene={ this.configureScene }

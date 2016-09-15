@@ -14,7 +14,6 @@ import HeaderContainer from '../../header/HeaderContainer';
 
 const CalculatorSelectorView = React.createClass({
   propTypes: {
-    text: PropTypes.string.isRequired,
     navigator: PropTypes.object.isRequired
   },
 

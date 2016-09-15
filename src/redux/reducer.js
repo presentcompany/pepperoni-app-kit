@@ -3,7 +3,6 @@ import {combineReducers} from 'redux-loop';
 import NavigationStateReducer from '../modules/navigation/NavigationState';
 import AuthStateReducer from '../modules/auth/AuthState';
 import CalculatorStateReducer from '../modules/screens/calculator/CalculatorState';
-import TextStateReducer from '../modules/text/TextState';
 import PageStateReducer from '../modules/page/PageState';
 import SessionStateReducer, {RESET_STATE} from '../modules/session/SessionState';
 
@@ -14,8 +13,6 @@ const reducers = {
   // @NOTE: By convention, the navigation state must live in a subtree called
   //`navigationState`
   navigationState: NavigationStateReducer,
-
-  text: TextStateReducer,
 
   page: PageStateReducer,
 

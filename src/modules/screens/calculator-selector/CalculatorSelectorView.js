@@ -18,18 +18,7 @@ const CalculatorSelectorView = React.createClass({
     navigator: PropTypes.object.isRequired
   },
 
-  _onPressButton() {
-    this.props.dispatch(
-        {
-          type: 'TextState/CHANGE',
-          text: 'new text'
-        }
-      );
-  },
-
   _navigate(page){
-    console.log(this.props);
-    console.log('inside calc selector');
     this.props.navigator.push({
       name: page,
     });

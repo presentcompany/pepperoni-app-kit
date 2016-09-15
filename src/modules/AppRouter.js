@@ -1,7 +1,7 @@
 /*eslint-disable react/prop-types*/
 
 import React from 'react';
-import CalculatorsContainer from './screens/calculators/CalculatorsContainer';
+import CalculatorsContainer from './screens/calculator-selector/CalculatorSelectorContainer';
 import HomeContainer from './home/HomeContainer';
 import BrokerMainContainer from './screens/broker/BrokerMainContainer';
 import BorrowContainer from './screens/borrow/main/BorrowContainer';

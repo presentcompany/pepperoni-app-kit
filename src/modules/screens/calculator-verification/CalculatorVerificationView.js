@@ -8,29 +8,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: -100,
-    marginBottom: 40,
-  },
-  shareIcon: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: 33, 
-    height: 32,
-  },
-  tick: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-  }
-})
-
 class CalculatorVerificationView extends Component {
-  
-
   render() {
         return (
       <View style={styles.container}>
@@ -50,5 +28,25 @@ class CalculatorVerificationView extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: -100,
+    marginBottom: 40,
+  },
+  shareIcon: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: 33, 
+    height: 32,
+  },
+  tick: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+  }
+});
 
 export default CalculatorVerificationView;

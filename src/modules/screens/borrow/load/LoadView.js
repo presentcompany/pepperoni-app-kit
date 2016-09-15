@@ -10,33 +10,6 @@ import {
 
 import CalculatorVerificationView from '../../calculator-verification/CalculatorVerificationView';
 
-
-var styles = StyleSheet.create({
-  view: {
-    flex: 1,
-    backgroundColor: '#76CA44',
-    borderRadius: 8,
-    minWidth: 315,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 10,
-    padding: 14,
-  },
-  text: {
-    color: '#fff',
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  questionContainer: {
-    marginTop: 40,
-  },
-  verficationContainer: {
-    marginTop: 4,
-    marginBottom: -4,
-  }
-})
-
 class CalculatorLoadView extends Component {
 
   _onPressButton() {
@@ -80,5 +53,31 @@ class CalculatorLoadView extends Component {
     );
   }
 }
+
+var styles = StyleSheet.create({
+  view: {
+    flex: 1,
+    backgroundColor: '#76CA44',
+    borderRadius: 8,
+    minWidth: 315,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+    padding: 14,
+  },
+  text: {
+    color: '#fff',
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  questionContainer: {
+    marginTop: 40,
+  },
+  verficationContainer: {
+    marginTop: 4,
+    marginBottom: -4,
+  }
+});
 
 export default CalculatorLoadView;

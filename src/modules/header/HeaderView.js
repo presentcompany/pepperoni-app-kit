@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 
 import * as PageState from '../page/PageState';
-import AppRouter from '../AppRouter';
 import styles from '../../styles.js';
 
 const HeaderView = React.createClass({

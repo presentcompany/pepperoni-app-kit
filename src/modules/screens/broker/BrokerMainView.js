@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import initstyles from '../../../styles.js';
 
-const BorderBoxView = React.createClass({
+const rokerMainView = React.createClass({
 
   _navigate(){
     this.props.navigator.push({
@@ -20,7 +20,7 @@ const BorderBoxView = React.createClass({
 
   render() {
     return (
-        <View style={[initstyles.mainBorder, styles.container]}>
+        <View style={[initstyles.mainBorder]}>
           <TouchableOpacity onPress={()=>this._navigate()}>
             <Text>
               Broker Page
@@ -31,46 +31,4 @@ const BorderBoxView = React.createClass({
   }
 });
 
-var styles = StyleSheet.create({
-  container: {
-  },
-  wrapper: {
-  },
-  slide1: {
-    flex: 1,
-    marginLeft: -24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  slide2: {
-    flex: 1,
-    marginLeft: -24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  slide3: {
-    flex: 1,
-    marginLeft: -24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  slide4: {
-    flex: 1,
-    marginLeft: -24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  slide5: {
-    flex: 1,
-    marginLeft: -24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-  }
-});
-
-export default BorderBoxView;
+export default rokerMainView;

@@ -13,9 +13,7 @@ import initstyles from '../../../styles.js';
 const rokerMainView = React.createClass({
 
   _navigate(){
-    this.props.navigator.push({
-      name: 'Home',
-    })
+    this.props.navigator.pop(0);
   },
 
   render() {

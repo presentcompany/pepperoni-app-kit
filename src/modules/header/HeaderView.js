@@ -16,9 +16,7 @@ const HeaderView = React.createClass({
   },
 
   _navigate(page){
-    this.props.navigator.push({
-      name: page,
-    });
+    this.props.navigator.popToTop(0);
   },
 
   render() {

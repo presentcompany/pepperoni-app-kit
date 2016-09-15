@@ -8,8 +8,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-import AppRouter from '../../AppRouter';
-import CalculatorVerificationView from '../calculator-verification/CalculatorVerificationView';
+import CalculatorVerificationView from '../../calculator-verification/CalculatorVerificationView';
 
 
 var styles = StyleSheet.create({

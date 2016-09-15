@@ -14,7 +14,6 @@ import initstyles from '../../../styles.js';
 import PageControl from'react-native-page-control';
 
 import HeaderContainer from '../../header/HeaderContainer';
-import BorderBoxContainer from '../../borderbox/BorderBoxContainer';
 import CalculatorSelectorContainer from '../calculator-selector/CalculatorSelectorContainer';
 
 const CalculatorsView = React.createClass({
@@ -48,7 +47,7 @@ const CalculatorsView = React.createClass({
         <HeaderContainer navigator={this.props.navigator}/>
         <View style={[initstyles.mainBorder, styles.container]}>
           <View>
-            <CalculatorSelectorContainer />
+            <CalculatorSelectorContainer navigator={this.props.navigator}/>
           </View>
        </View>
      </View>

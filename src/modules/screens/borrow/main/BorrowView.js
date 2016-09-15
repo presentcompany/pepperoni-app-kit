@@ -11,8 +11,10 @@ import {
 
 import Swiper from 'react-native-swiper';
 
-import initstyles from '../../../styles.js';
-import * as PageState from '../../page/PageState';
+import initstyles from '../../../../styles.js';
+import * as PageState from '../../../page/PageState';
+import HeaderContainer from '../../../header/HeaderContainer';
+import LayoutBorderContainer from '../../../layoutborder/LayoutBorderContainer';
 import CalculatorLoadContainer from '../load/LoadContainer';
 import CalculatorContainer from '../calculator/CalculatorContainer';
 import CalculatorResultsContainer from '../results/ResultsContainer';
@@ -42,7 +44,9 @@ const BorrowView = React.createClass({
 
   render() {
     return (
-        <View style={[initstyles.mainBorder, styles.container]}>
+      <View style={[initstyles.container, initstyles.mainBackground]}>
+        <HeaderContainer navigator={this.props.navigator}/>
+        <LayoutBorderContainer navigator={this.props.navigator}>
           <TouchableOpacity onPress={()=>this._onPressButton(2)}>
             <Text>
               Go to page 2
@@ -69,7 +73,8 @@ const BorrowView = React.createClass({
               </ScrollView>
             </View>
           </Swiper>
-        </View>
+        </LayoutBorderContainer>
+      </View>
     );
   }
 });

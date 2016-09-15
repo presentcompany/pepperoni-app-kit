@@ -8,9 +8,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-import AppRouter from '../../AppRouter';
-
-import CalculatorShareView from '../calculator-share/CalculatorShareView';
+import CalculatorShareView from '../../calculator-share/CalculatorShareView';
 
 var styles = StyleSheet.create({
   marginFirstChild: {

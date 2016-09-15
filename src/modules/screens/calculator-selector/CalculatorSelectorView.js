@@ -13,7 +13,8 @@ import styles from '../../../styles.js';
 
 const CalculatorSelectorView = React.createClass({
   propTypes: {
-    text: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired,
+    navigator: PropTypes.object.isRequired
   },
 
   _onPressButton() {
@@ -23,6 +24,14 @@ const CalculatorSelectorView = React.createClass({
           text: 'new text'
         }
       );
+  },
+
+  _navigate(page){
+    console.log(this.props);
+    console.log('inside calc selector');
+    this.props.navigator.push({
+      name: page,
+    });
   },
 
   _onPressButtonTwo() {
@@ -37,7 +46,7 @@ const CalculatorSelectorView = React.createClass({
     return (
       <View>
         <View style={[styles.imageContainer, styles.imageContainerFirst]}>
-          <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+          <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Borrow')}>
             <Image
               style={styles.mainButton}
               source={require('../../../images/borrow-button.png')}

@@ -1,4 +1,4 @@
 import {connect} from 'react-redux';
-import CalculatorLoadView from './CalculatorLoadView';
+import LoadView from './LoadView';
 
-export default connect()(CalculatorLoadView);
+export default connect()(LoadView);

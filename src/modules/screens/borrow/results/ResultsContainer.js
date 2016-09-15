@@ -1,4 +1,4 @@
 import {connect} from 'react-redux';
-import CalculatorResultsView from './CalculatorResultsView';
+import ResultsView from './ResultsView';
 
-export default connect()(CalculatorResultsView);
+export default connect()(ResultsView);

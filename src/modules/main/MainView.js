@@ -13,8 +13,8 @@ import {
 import PageControl from'react-native-page-control';
 
 import styles from '../../../styles.js';
-import HeaderContainer from '../../header/HeaderContainer'
-import BorderBoxContainer from '../../borderbox/BorderBoxContainer'
+import HeaderContainer from '../../header/HeaderContainer';
+import LayoutBorderContainer from '../../layoutborder/LayoutBorderContainer';
 
 const MainView = React.createClass({
   
@@ -43,9 +43,34 @@ const MainView = React.createClass({
 
   render() {
     return (
-      <View style={styles.mainBackground}>
+      <View style={[styles.mainBorder, styles.container, styles.mainBackground]}>
         <HeaderContainer navigator={this.props.navigator}/>
-        <BorderBoxContainer />
+        <LayoutBorderContainer navigator={this.props.navigator}>
+          <Swiper 
+            ref='swiper' 
+            style={initstyles.wrapper} 
+            showsButtons={false} 
+            loop={false}
+            onMomentumScrollEnd = {this._onMomentumScrollEnd}>
+            <View style={styles.slide1}>
+              <CalculatorSelectorContainer navigator={this.props.navigator}/>
+            </View>
+            <View style={styles.slide4}>
+              <CalculatorContainer />
+            </View>
+            <View style={styles.slide5}>
+              <CalculatorContainer />
+            </View>
+            <View style={styles.slide2}>
+              <CalculatorLoadContainer />
+            </View>
+            <View style={styles.slide3}>
+              <ScrollView showsVerticalScrollIndicator={false}>
+                <CalculatorResultsContainer />
+              </ScrollView>
+            </View>
+          </Swiper>
+        </LayoutBorderContainer>
      </View>
     );
   }

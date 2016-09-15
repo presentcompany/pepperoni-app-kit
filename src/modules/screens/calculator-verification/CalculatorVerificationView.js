@@ -7,27 +7,41 @@ import {
   View, 
   StyleSheet
 } from 'react-native';
+import * as PageState from '../../page/PageState';
 
-class CalculatorVerificationView extends Component {
+const CalculatorVerificationView = React.createClass({
+
+  propTypes: {
+    page: PropTypes.number.isRequired
+  },
+
+  _onPressButton() {
+    this.props.dispatch(PageState.change({
+      page: this.props.page - 1
+    }));
+  },
+
   render() {
-        return (
+    return (
       <View style={styles.container}>
-        <TouchableHighlight>
+        <TouchableHighlight
+          onPress={this._onPressButton}
+        >
           <Image
-              style={[styles.shareIcon]}
-              source={require('../../../images/arrow-return.png')}
-            />
+            style={[styles.shareIcon]}
+            source={require('../../../images/arrow-return.png')}
+          />
         </TouchableHighlight>
         <TouchableHighlight>
           <Image
-              style={styles.tick}
-              source={require('../../../images/tick-inactive.png')}
-            />
+            style={styles.tick}
+            source={require('../../../images/tick-inactive.png')}
+          />
         </TouchableHighlight>
       </View>
     );
   }
-}
+});
 
 const styles = StyleSheet.create({
   container: {

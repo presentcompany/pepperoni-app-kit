@@ -8,7 +8,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-import CalculatorVerificationView from '../calculator-verification/CalculatorVerificationView';
+import CalculatorVerificationContainer from '../calculator-verification/CalculatorVerificationContainer';
 
 const CalculatorView = React.createClass({
 
@@ -33,7 +33,7 @@ const CalculatorView = React.createClass({
     return (
       <View>
         <View style={styles.verficationContainer}>
-          <CalculatorVerificationView  />
+          <CalculatorVerificationContainer  />
         </View>
         <View>
           <Text style={styles.text}>What is your annual</Text>

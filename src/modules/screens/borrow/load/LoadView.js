@@ -8,19 +8,23 @@ import {
   StyleSheet
 } from 'react-native';
 
-import CalculatorVerificationView from '../../calculator-verification/CalculatorVerificationView';
+import CalculatorVerificationContainer from '../../calculator-verification/CalculatorVerificationContainer';
 
-class CalculatorLoadView extends Component {
+const CalculatorLoadView = React.createClass({
+
+  propTypes: {
+    page: PropTypes.number.isRequired
+  },
 
   _onPressButton() {
     console.log("button on the calculator loan was pressed");
-  }
+  },
 
   render() {
     return (
       <View>
         <View style={styles.verficationContainer}>
-          <CalculatorVerificationView />
+          <CalculatorVerificationContainer />
         </View> 
         <View style={styles.questionContainer}>  
           <View>
@@ -52,7 +56,7 @@ class CalculatorLoadView extends Component {
       </View>
     );
   }
-}
+});
 
 var styles = StyleSheet.create({
   view: {

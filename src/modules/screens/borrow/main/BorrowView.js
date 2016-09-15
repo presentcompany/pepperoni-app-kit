@@ -16,7 +16,7 @@ import * as PageState from '../../../page/PageState';
 import HeaderContainer from '../../../header/HeaderContainer';
 import LayoutBorderContainer from '../../../layoutborder/LayoutBorderContainer';
 import CalculatorLoadContainer from '../load/LoadContainer';
-import CalculatorContainer from '../calculator/CalculatorContainer';
+import CalculatorContainer from '../../calculator/CalculatorContainer';
 import CalculatorResultsContainer from '../results/ResultsContainer';
 
 const BorrowView = React.createClass({

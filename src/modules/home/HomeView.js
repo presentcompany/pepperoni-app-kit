@@ -17,7 +17,6 @@ const HomeView = React.createClass({
   },
 
   _navigate(page){
-    console.log(this.props);
     this.props.navigator.push({
       name: page,
     });

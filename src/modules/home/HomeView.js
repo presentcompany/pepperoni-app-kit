@@ -17,7 +17,6 @@ const HomeView = React.createClass({
   },
 
   _navigate(page){
-    console.log(this.props);
     this.props.navigator.push({
       name: page,
     });
@@ -28,24 +27,24 @@ const HomeView = React.createClass({
       <View style={styles.mainBackground}>
         <View style={inlineStyles.flexContainer}>
           <Image 
-                style={[inlineStyles.oxygenLogo]}
-                source={require('../../images/oxygen_logo_white.png')}
+            style={[inlineStyles.oxygenLogo]}
+            source={require('../../images/oxygen_logo_white.png')}
           />
           <Text style={[inlineStyles.text, inlineStyles.bylineMargin]}>Home loads made simple.</Text>
           <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Broker')}>
             <View style={inlineStyles.brokerStyles}>
               <Image 
-                  style={inlineStyles.brokerIcon}
-                  source={require('../../images/find_broker_icon.png')}
+                style={inlineStyles.brokerIcon}
+                source={require('../../images/find_broker_icon.png')}
               />
               <Text style={inlineStyles.text}>Find A Broker</Text>
             </View>
           </TouchableHighlight>
-          <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Main')}>
+          <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Calculators')}>
             <View style={inlineStyles.income}>
               <Image 
-                  style={inlineStyles.loanLogo}
-                  source={require('../../images/loan_calculator_logo.png')}
+                style={inlineStyles.loanLogo}
+                source={require('../../images/loan_calculator_logo.png')}
               />
               <Text style={inlineStyles.text}>Loan Calculators</Text>
             </View>

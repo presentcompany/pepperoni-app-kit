@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 
 import * as PageState from '../page/PageState';
-import AppRouter from '../AppRouter';
 import styles from '../../styles.js';
 
 const HeaderView = React.createClass({
@@ -26,10 +25,14 @@ const HeaderView = React.createClass({
     return (
       <View style={styles.header}>
         <View style={styles.flexContainer}>
-          <Image 
-              style={styles.headerLogo}
-              source={require('../../images/oxygen_logo.png')}
-          />
+          <TouchableHighlight 
+            onPress={()=>this._navigate('Home')}
+          >
+            <Image 
+                style={styles.headerLogo}
+                source={require('../../images/oxygen_logo.png')}
+            />
+          </TouchableHighlight>
           <TouchableHighlight 
             style={styles.headerHomeButton} 
             underlayColor='rgba(0,0,0,0)' 

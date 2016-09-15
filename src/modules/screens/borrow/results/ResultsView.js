@@ -8,54 +8,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-import AppRouter from '../../AppRouter';
-
-import CalculatorShareView from '../calculator-share/CalculatorShareView';
-
-var styles = StyleSheet.create({
-  marginFirstChild: {
-    marginTop: 150,
-  },
-  marginLastChild: {
-    marginBottom: 170,
-  },
-  marginTop: {
-    marginTop: 15,
-  },
-  marginBottom: {
-    marginBottom: 10,
-  },
-  valueText: {
-    flex:1,
-    color: '#fff',
-    fontSize: 42,
-    fontWeight: 'bold',
-    textAlign: 'right',
-  },
-  blueBox: {
-    flex:1,
-    minHeight: 56,
-    padding: 4,
-    backgroundColor: '#1989B2',
-  },
-  button: {
-    flex: 1,
-    backgroundColor: '#76CA44',
-    borderRadius: 8,
-    minWidth: 315,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 10,
-    padding: 14,
-  },
-  text: {
-    flex:1,
-    color: '#fff',
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'right',
-  }
-})
+import CalculatorShareView from '../../calculator-share/CalculatorShareView';
 
 class CalculatorResultsView extends Component {
 
@@ -103,5 +56,50 @@ class CalculatorResultsView extends Component {
     );
   }
 }
+
+var styles = StyleSheet.create({
+  marginFirstChild: {
+    marginTop: 150,
+  },
+  marginLastChild: {
+    marginBottom: 170,
+  },
+  marginTop: {
+    marginTop: 15,
+  },
+  marginBottom: {
+    marginBottom: 10,
+  },
+  valueText: {
+    flex:1,
+    color: '#fff',
+    fontSize: 42,
+    fontWeight: 'bold',
+    textAlign: 'right',
+  },
+  blueBox: {
+    flex:1,
+    minHeight: 56,
+    padding: 4,
+    backgroundColor: '#1989B2',
+  },
+  button: {
+    flex: 1,
+    backgroundColor: '#76CA44',
+    borderRadius: 8,
+    minWidth: 315,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+    padding: 14,
+  },
+  text: {
+    flex:1,
+    color: '#fff',
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'right',
+  }
+});
 
 export default CalculatorResultsView;

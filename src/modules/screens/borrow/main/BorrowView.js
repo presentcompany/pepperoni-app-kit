@@ -11,15 +11,13 @@ import {
 
 import Swiper from 'react-native-swiper';
 
-import AppRouter from '../../AppRouter';
 import initstyles from '../../../styles.js';
 import * as PageState from '../../page/PageState';
-import CalculatorSelectorContainer from '../calculator-selector/CalculatorSelectorContainer';
-import CalculatorLoadContainer from '../calculator-load/CalculatorLoadContainer';
+import CalculatorLoadContainer from '../load/LoadContainer';
 import CalculatorContainer from '../calculator/CalculatorContainer';
-import CalculatorResultsContainer from '../calculator-results/CalculatorResultsContainer';
+import CalculatorResultsContainer from '../results/ResultsContainer';
 
-const BorderBoxView = React.createClass({
+const BorrowView = React.createClass({
 
   propTypes: {
     page: PropTypes.number.isRequired
@@ -56,9 +54,6 @@ const BorderBoxView = React.createClass({
             showsButtons={false} 
             loop={false}
             onMomentumScrollEnd = {this._onMomentumScrollEnd}>
-            <View style={styles.slide1}>
-              <CalculatorSelectorContainer />
-            </View>
             <View style={styles.slide4}>
               <CalculatorContainer />
             </View>
@@ -121,4 +116,4 @@ var styles = StyleSheet.create({
   }
 });
 
-export default BorderBoxView;
+export default BorrowView;

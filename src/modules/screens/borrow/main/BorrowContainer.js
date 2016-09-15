@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
-import BorderBoxView from './BorderBoxView';
+import BorrowView from './BorrowView';
 
 export default connect(
   state => ({
   	page: state.getIn(['page']),
   })
-)(BorderBoxView);
+)(BorrowView);

@@ -11,12 +11,12 @@ import {
 
 import Swiper from 'react-native-swiper';
 
-import initstyles from '../../../styles.js';
-import * as PageState from '../../page/PageState';
-import CalculatorSelectorContainer from '../calculator-selector/CalculatorSelectorContainer';
-import CalculatorLoadContainer from '../calculator-load/CalculatorLoadContainer';
-import CalculatorContainer from '../calculator/CalculatorContainer';
-import CalculatorResultsContainer from '../calculator-results/CalculatorResultsContainer';
+import initstyles from '../../styles.js';
+import * as PageState from '../page/PageState';
+import CalculatorSelectorContainer from '../screens/calculator-selector/CalculatorSelectorContainer';
+import CalculatorLoadContainer from '../screens/calculator-load/CalculatorLoadContainer';
+import CalculatorContainer from '../screens/calculator/CalculatorContainer';
+import CalculatorResultsContainer from '../screens/calculator-results/CalculatorResultsContainer';
 
 const BorderBoxView = React.createClass({
 

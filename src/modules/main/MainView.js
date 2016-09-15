@@ -12,10 +12,9 @@ import {
 
 import PageControl from'react-native-page-control';
 
-import AppRouter from '../AppRouter';
-import styles from '../../styles.js';
-import HeaderContainer from '../header/HeaderContainer'
-import BorderBoxContainer from '../screens/borderbox/BorderBoxContainer'
+import styles from '../../../styles.js';
+import HeaderContainer from '../../header/HeaderContainer'
+import BorderBoxContainer from '../../borderbox/BorderBoxContainer'
 
 const MainView = React.createClass({
   

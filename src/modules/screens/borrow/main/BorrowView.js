@@ -44,7 +44,7 @@ const BorrowView = React.createClass({
 
   render() {
     return (
-      <View style={[initstyles.container, initstyles.mainBackground]}>
+      <View style={[ initstyles.mainBackground]}>
         <HeaderContainer navigator={this.props.navigator}/>
         <LayoutBorderContainer navigator={this.props.navigator}>
           <TouchableOpacity onPress={()=>this._onPressButton(2)}>

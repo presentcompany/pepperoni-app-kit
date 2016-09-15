@@ -10,70 +10,6 @@ import {
 
 import CalculatorVerificationView from '../../calculator-verification/CalculatorVerificationView';
 
-var styles = StyleSheet.create({
-  rowContainer: {
-    flexDirection: 'row',
-  },
-  margin: {
-    marginLeft: 3,
-    marginRight: 3,
-    marginTop: 9,
-  },
-  button: {
-    flex: 1,
-    height: 70,
-    width: 101,
-    backgroundColor: '#76CA44',
-    marginLeft: 3,
-    marginRight: 3,
-    marginTop: 9,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  income: {
-    flex: 1,
-    height: 70,
-    backgroundColor: '#1989B2',
-    marginLeft: 3,
-    paddingRight: 13,
-    marginTop: 9,
-    justifyContent: 'center',
-
-  },
-  zeroButton: {
-    flex: 2,
-    height: 70,
-    width: 208,
-    backgroundColor: '#76CA44',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  cancelButton: {
-    flex: 1,
-    height: 70,
-    width: 101,
-    backgroundColor: '#D7453B',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-    textAlign: 'right',
-  },
-  verficationContainer: {
-    marginTop: 40,
-    marginBottom: -40,
-  }
-})
-
 const CalculatorView = React.createClass({
 
   propTypes: {
@@ -176,5 +112,68 @@ const CalculatorView = React.createClass({
   }
 });
 
+var styles = StyleSheet.create({
+  rowContainer: {
+    flexDirection: 'row',
+  },
+  margin: {
+    marginLeft: 3,
+    marginRight: 3,
+    marginTop: 9,
+  },
+  button: {
+    flex: 1,
+    height: 70,
+    width: 101,
+    backgroundColor: '#76CA44',
+    marginLeft: 3,
+    marginRight: 3,
+    marginTop: 9,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  income: {
+    flex: 1,
+    height: 70,
+    backgroundColor: '#1989B2',
+    marginLeft: 3,
+    paddingRight: 13,
+    marginTop: 9,
+    justifyContent: 'center',
+
+  },
+  zeroButton: {
+    flex: 2,
+    height: 70,
+    width: 208,
+    backgroundColor: '#76CA44',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cancelButton: {
+    flex: 1,
+    height: 70,
+    width: 101,
+    backgroundColor: '#D7453B',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
+    textAlign: 'right',
+  },
+  verficationContainer: {
+    marginTop: 40,
+    marginBottom: -40,
+  }
+});
 
 export default CalculatorView;

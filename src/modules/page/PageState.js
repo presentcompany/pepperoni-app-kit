@@ -34,9 +34,3 @@ export default function PageStateReducer(state = initialState, action = {}) {
       return state;
   }
 }
-
-// Update View
-
-export function changePage() {
-  this.refs.swiper.scrollBy(this.props.page.page);
-}

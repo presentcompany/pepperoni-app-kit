@@ -47,25 +47,20 @@ const BorrowView = React.createClass({
       <View style={[ initstyles.mainBackground]}>
         <HeaderContainer navigator={this.props.navigator}/>
         <LayoutBorderContainer navigator={this.props.navigator}>
-          <TouchableOpacity onPress={()=>this._onPressButton(2)}>
-            <Text>
-              Go to page 2
-            </Text>
-          </TouchableOpacity>
           <Swiper 
             ref='swiper' 
             style={initstyles.wrapper} 
             showsButtons={false} 
             loop={false}
             onMomentumScrollEnd = {this._onMomentumScrollEnd}>
+            <View style={styles.slide2}>
+              <CalculatorLoadContainer />
+            </View>
             <View style={styles.slide4}>
               <CalculatorContainer />
             </View>
             <View style={styles.slide5}>
               <CalculatorContainer />
-            </View>
-            <View style={styles.slide2}>
-              <CalculatorLoadContainer />
             </View>
             <View style={styles.slide3}>
               <ScrollView showsVerticalScrollIndicator={false}>

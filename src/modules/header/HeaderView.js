@@ -25,6 +25,7 @@ const HeaderView = React.createClass({
         <View style={styles.flexContainer}>
           <TouchableHighlight 
             onPress={()=>this._navigate('Home')}
+            underlayColor='rgba(0,0,0,0)'
           >
             <Image 
                 style={styles.headerLogo}

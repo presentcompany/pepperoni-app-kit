@@ -11,6 +11,7 @@ import {
 import CalculatorVerificationContainer from '../../calculator-verification/CalculatorVerificationContainer';
 import * as BorrowState from '../main/BorrowState';
 import * as PageState from '../../../page/PageState';
+import Dimensions from 'Dimensions'; 
 
 const LoanTypeView = React.createClass({
 
@@ -34,7 +35,7 @@ const LoanTypeView = React.createClass({
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <View style={styles.verficationContainer}>
           <CalculatorVerificationContainer />
         </View> 
@@ -88,10 +89,9 @@ const LoanTypeView = React.createClass({
 
 var styles = StyleSheet.create({
   view: {
-    flex: 1,
     backgroundColor: '#76CA44',
     borderRadius: 8,
-    minWidth: 315,
+    width: Dimensions.get('window').width - 60,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 10,
@@ -104,11 +104,20 @@ var styles = StyleSheet.create({
     textAlign: 'center',
   },
   questionContainer: {
-    marginTop: 40,
+    flex: 1, 
+    height: Dimensions.get('window').height - 114, 
+    marginTop: - 47, 
+    justifyContent: 'center', 
+    alignItems: 'center',
   },
   verficationContainer: {
-    marginTop: 4,
-    marginBottom: -4,
+    width: Dimensions.get('window').width, 
+    justifyContent: 'center', 
+  }, 
+  container: { 
+    height: Dimensions.get('window').height, 
+    flex: 1, 
+    paddingTop: 74,
   }
 });
 

@@ -82,7 +82,7 @@ const BorrowView = React.createClass({
               onMomentumScrollEnd = {this._onMomentumScrollEnd}
               >
               <View style={[styles.slide2]} viewHeight={this.state.height}>
-                <CalculatorLoadContainer />
+                <LoanTypeContainer />
               </View>
               <View style={styles.slide4}>
                 <CalculatorContainer />

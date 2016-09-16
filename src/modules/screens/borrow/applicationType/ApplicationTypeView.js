@@ -12,16 +12,16 @@ import CalculatorVerificationContainer from '../../calculator-verification/Calcu
 import * as BorrowState from '../main/BorrowState';
 import * as PageState from '../../../page/PageState';
 
-const LoanTypeView = React.createClass({
+const ApplicationType = React.createClass({
 
   propTypes: {
     page: PropTypes.number.isRequired,
     borrow: PropTypes.object.isRequired,
   },
 
-  _updateLoanType(loanType) {
+  _updateLoanType(applicationType) {
     let borrow = this.props.borrow;
-    borrow.loanType = loanType;
+    borrow.applicationType = applicationType;
 
     this.props.dispatch(BorrowState.change({
       borrow: borrow
@@ -40,44 +40,24 @@ const LoanTypeView = React.createClass({
         </View> 
         <View style={styles.questionContainer}>  
           <View>
-            <Text style={styles.text}>I need a loan to...</Text>
+            <Text style={styles.text}>Application Type</Text>
           </View>
           <TouchableHighlight
             style={styles.headerHomeButton}
             underlayColor='rgba(0,0,0,0)'
-            onPress={()=>this._updateLoanType('firstHome')}
+            onPress={()=>this._updateLoanType('single')}
           >
             <View style={styles.view}>
-              <Text style={styles.text}>Buy my first home</Text>
+              <Text style={styles.text}>Single</Text>
             </View>
           </TouchableHighlight>
           <TouchableHighlight
             style={styles.headerHomeButton}
             underlayColor='rgba(0,0,0,0)'
-            onPress={()=>this._updateLoanType('nextHome')}
+            onPress={()=>this._updateLoanType('joint')}
           >
             <View style={styles.view}>
-              <Text style={styles.text}>Buy my next home</Text>
-            </View>
-          </TouchableHighlight>
-          <TouchableHighlight
-            style={styles.headerHomeButton}
-            underlayColor='rgba(0,0,0,0)'
-            onPress={()=>this._updateLoanType('refinance')}
-          >
-            <View style={styles.view}>
-              <Text style={styles.text}>Refinance an</Text>
-              <Text style={styles.text}>existing loan</Text>
-            </View>
-          </TouchableHighlight>
-          <TouchableHighlight
-            style={styles.headerHomeButton}
-            underlayColor='rgba(0,0,0,0)'
-            onPress={()=>this._updateLoanType('investment')}
-          >
-            <View style={styles.view}>
-              <Text style={styles.text}>Buy an investment</Text>
-              <Text style={styles.text}>property</Text>
+              <Text style={styles.text}>Joint</Text>
             </View>
           </TouchableHighlight>
         </View>
@@ -112,4 +92,4 @@ var styles = StyleSheet.create({
   }
 });
 
-export default LoanTypeView;
+export default ApplicationType;

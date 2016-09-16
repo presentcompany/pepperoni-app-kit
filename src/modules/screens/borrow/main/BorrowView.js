@@ -16,6 +16,7 @@ import * as PageState from '../../../page/PageState';
 import HeaderContainer from '../../../header/HeaderContainer';
 import LayoutBorderContainer from '../../../layoutborder/LayoutBorderContainer';
 import LoanTypeContainer from '../loanType/LoanTypeContainer';
+import ApplicationTypeContainer from '../applicationType/ApplicationTypeContainer';
 import CalculatorContainer from '../../calculator/CalculatorContainer';
 import CalculatorResultsContainer from '../results/ResultsContainer';
 

@@ -10,6 +10,7 @@ import {
 
 import CalculatorVerificationContainer from '../../calculator-verification/CalculatorVerificationContainer';
 import * as BorrowState from '../main/BorrowState';
+import * as PageState from '../../../page/PageState';
 
 const CalculatorLoadView = React.createClass({
 
@@ -18,12 +19,17 @@ const CalculatorLoadView = React.createClass({
     borrow: PropTypes.object.isRequired,
   },
 
-  componentDidMount() {
-    console.log(this.props);
-  },
+  _updateLoanType(loanType) {
+    let borrow = this.props.borrow;
+    borrow.loanType = loanType;
 
-  _onPressButton() {
-    console.log("button on the calculator loan was pressed");
+    this.props.dispatch(BorrowState.change({
+      borrow: borrow
+    }));
+
+    this.props.dispatch(PageState.change({
+      page: this.props.page + 1
+    }));
   },
 
   render() {
@@ -36,23 +42,39 @@ const CalculatorLoadView = React.createClass({
           <View>
             <Text style={styles.text}>I need a loan to...</Text>
           </View>
-          <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+          <TouchableHighlight
+            style={styles.headerHomeButton}
+            underlayColor='rgba(0,0,0,0)'
+            onPress={()=>this._updateLoanType('firstHome')}
+          >
             <View style={styles.view}>
               <Text style={styles.text}>Buy my first home</Text>
             </View>
           </TouchableHighlight>
-          <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+          <TouchableHighlight
+            style={styles.headerHomeButton}
+            underlayColor='rgba(0,0,0,0)'
+            onPress={()=>this._updateLoanType('nextHome')}
+          >
             <View style={styles.view}>
               <Text style={styles.text}>Buy my next home</Text>
             </View>
           </TouchableHighlight>
-          <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+          <TouchableHighlight
+            style={styles.headerHomeButton}
+            underlayColor='rgba(0,0,0,0)'
+            onPress={()=>this._updateLoanType('refinance')}
+          >
             <View style={styles.view}>
               <Text style={styles.text}>Refinance an</Text>
               <Text style={styles.text}>existing loan</Text>
             </View>
           </TouchableHighlight>
-          <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+          <TouchableHighlight
+            style={styles.headerHomeButton}
+            underlayColor='rgba(0,0,0,0)'
+            onPress={()=>this._updateLoanType('investment')}
+          >
             <View style={styles.view}>
               <Text style={styles.text}>Buy an investment</Text>
               <Text style={styles.text}>property</Text>

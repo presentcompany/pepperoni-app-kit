@@ -26,7 +26,7 @@ const RESET = 'BorrowState/RESET';
 export function change(state) {
   return {
     type: CHANGE,
-    page: state.page
+    borrow: state.borrow
   };
 }
 
@@ -38,7 +38,7 @@ export function reset() {
 export default function BorrowStateReducer(state = initialState, action = {}) {
   switch (action.type) {
     case CHANGE:
-      return action.page;
+      return action.borrow;
 
     case RESET:
       return initialState;

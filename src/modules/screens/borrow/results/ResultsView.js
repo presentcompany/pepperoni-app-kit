@@ -47,9 +47,9 @@ class CalculatorResultsView extends Component {
           <View style={styles.blueBox}>
             <Text style={styles.valueText}>$4,746</Text>
           </View>
-          <TouchableHighlight style={[styles.headerHomeButton, styles.marginTop, styles.marginLastChild]} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
-            <View style={styles.button}>
-              <Text style={[styles.text]}>Find a broker</Text>          
+          <TouchableHighlight style={[styles.marginTop, styles.marginLastChild, styles.button]} underlayColor='rgba(0,0,0,0)' onPress={this._onPressButton}>
+            <View>
+              <Text style={[styles.btnText]}>Find a broker</Text>          
             </View>
           </TouchableHighlight>
         </View>
@@ -63,7 +63,7 @@ var styles = StyleSheet.create({
     marginTop: 100,
   },
   marginLastChild: {
-    marginBottom: 170,
+    marginBottom: 100,
   },
   marginTop: {
     marginTop: 15,
@@ -94,11 +94,14 @@ var styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#76CA44',
     borderRadius: 8,
-    minWidth: 315,
+    width: Dimensions.get('window').width-40,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 10,
-    padding: 14,
+    marginTop: 20,
+    paddingTop: 14,
+    paddingBottom: 14,
+    paddingRight: 20,
+    paddingLeft: 20,
   },
   shareContainer: {
     width: Dimensions.get('window').width, 
@@ -110,6 +113,13 @@ var styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'right',
+  },
+  btnText: {
+    flex:1,
+    color: '#fff',
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   container: {  
     flex: 1, 

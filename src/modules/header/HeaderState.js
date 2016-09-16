@@ -21,7 +21,6 @@ export default function HeaderReducer(state = initialState, action) {
     case HOME_BUTTON: {
       // Push a route into the scenes stack.
       const home = action.payload;
-      console.log(home);
       return state;
     }
 

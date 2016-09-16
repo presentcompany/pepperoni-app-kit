@@ -27,9 +27,9 @@ const NavigationView = React.createClass({
     if(route.name === 'Home') {
       return Navigator.SceneConfigs.FloatFromLeft;
     } else if (route.name === 'Broker' || route.name === 'Borrow' || route.name === 'Calculators') {
-      return Navigator.SceneConfigs.FloatFromRight;
+      return Navigator.SceneConfigs.PushFromRight;
     } else {
-      return Navigator.SceneConfigs.FloatFromRight;
+      return Navigator.SceneConfigs.PushFromRight;
     }
   },
 

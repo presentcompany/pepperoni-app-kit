@@ -56,14 +56,12 @@ const BorrowView = React.createClass({
   },
 
   measureView(event) {
-    console.log('event peroperties: ', event);
     this.setState({
         x: event.nativeEvent.layout.x,
         y: event.nativeEvent.layout.y,
         width: event.nativeEvent.layout.width,
         height: event.nativeEvent.layout.height
     });
-    console.log('height: ', this.state.height);
   },
 
   render() {

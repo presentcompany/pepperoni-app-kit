@@ -23,7 +23,6 @@ const CalculatorSelectorView = React.createClass({
   },
 
   _onPressButtonTwo() {
-      console.log(this.props);
   },
 
   _onPressButtonThree() {

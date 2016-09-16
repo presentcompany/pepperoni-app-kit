@@ -48,7 +48,6 @@ const rokerMainView = React.createClass({
   },
 
   measureView(event) {
-    console.log('event peroperties: ', event);
     this.setState({
         x: event.nativeEvent.layout.x,
         y: event.nativeEvent.layout.y,
@@ -59,7 +58,7 @@ const rokerMainView = React.createClass({
 
   render() {
     return (
-        <View>
+        <View style={initstyles.mainBackground}>
           <View onLayout={(event) => this.measureView(event)}> 
             <HeaderContainer />
           </View>

@@ -40,7 +40,6 @@ export default function CalculatorSelectorReducer(state = initialState, action) 
     case PUSH_ROUTE: {
       // Push a route into the scenes stack.
       const route = action.payload;
-      console.log(route);
       return state;
     }
 

@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import CalculatorShareView from '../../calculator-share/CalculatorShareView';
+import Dimensions from 'Dimensions'; 
 
 class CalculatorResultsView extends Component {
 
@@ -18,12 +19,12 @@ class CalculatorResultsView extends Component {
 
   render() {
     return (
-      <View>
-        <View>
+      <View style={styles.container}>
+        <View style={styles.shareContainer}>
           <CalculatorShareView />
         </View> 
         <View style={[styles.margins, styles.marginFirstChild]}>
-          <View style={styles.margins}>
+          <View>
             <Text style={[styles.text]}>You may be able to</Text>
             <Text style={[styles.text, styles.marginBottom]}>borrow up to...</Text>
           </View>
@@ -59,7 +60,7 @@ class CalculatorResultsView extends Component {
 
 var styles = StyleSheet.create({
   marginFirstChild: {
-    marginTop: 150,
+    marginTop: 100,
   },
   marginLastChild: {
     marginBottom: 170,
@@ -69,6 +70,12 @@ var styles = StyleSheet.create({
   },
   marginBottom: {
     marginBottom: 10,
+  },
+  margins: {
+    width: Dimensions.get('window').width,
+    paddingLeft: 20,
+    paddingRight: 20, 
+    justifyContent: 'center',
   },
   valueText: {
     flex:1,
@@ -93,12 +100,21 @@ var styles = StyleSheet.create({
     marginTop: 10,
     padding: 14,
   },
+  shareContainer: {
+    width: Dimensions.get('window').width, 
+    justifyContent: 'center', 
+  }, 
   text: {
     flex:1,
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'right',
+  },
+  container: {  
+    flex: 1, 
+    width: Dimensions.get('window').width,
+    paddingTop: 74,
   }
 });
 

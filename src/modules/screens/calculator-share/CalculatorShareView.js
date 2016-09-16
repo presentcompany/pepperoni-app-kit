@@ -33,20 +33,18 @@ class CalculatorShareView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 40,
-    marginBottom: -40,
   },
   shareIcon: {
     position: 'absolute',
     top: 0,
-    left: 0,
+    left: 20,
     width: 33, 
     height: 32,
   },
   tick: {
     position: 'absolute',
     top: 0,
-    right: 0,
+    right: 20,
   }
 });
 

@@ -16,9 +16,11 @@ const CalculatorVerificationView = React.createClass({
   },
 
   _onPressButton() {
-    this.props.dispatch(PageState.change({
-      page: this.props.page - 1
-    }));
+    if (this.props.page !== 0) {
+      this.props.dispatch(PageState.change({
+        page: this.props.page - 1
+      }));
+    }
   },
 
   render() {

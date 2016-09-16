@@ -1,8 +1,9 @@
 import {connect} from 'react-redux';
-import LoadView from './LoadView';
+import LoanTypeView from './LoanTypeView';
 
 export default connect(
   state => ({
   	page: state.getIn(['page']),
+  	borrow: state.getIn(['borrow']),
   })
-)(LoadView);
+)(LoanTypeView);

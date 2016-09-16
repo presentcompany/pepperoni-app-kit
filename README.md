@@ -67,15 +67,15 @@ cp env.example.js env.js
 
 ### Build
 
-In the root directory:
-
-Compile the application (keep this running):
+As it currently stands, `npm start` runs the ios transformation and `hot module replacement` for `React`, however we still require `gulp watch` to run the sass compiler. Due to this, run the following:
 
 ```
-npm start
+gulp watch
 ```
 
-Build the application:
+This will run gulp sass and also run the shell command `npm start`. This will cause 2 terminal sessions to run concurrently.
+
+If the above did not build/launch the ios simulator, you can also launch the application by running:
 
 ```
 react-native run-ios

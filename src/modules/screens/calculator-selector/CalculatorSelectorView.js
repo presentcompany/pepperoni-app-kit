@@ -12,6 +12,19 @@ import styles from '../../../styles.js';
 import HeaderContainer from '../../header/HeaderContainer';
 import Dimensions from 'Dimensions';
 
+const inlineStyles = {
+  imageContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: Dimensions.get('window').height/4,
+  },
+  mainText: {
+    marginTop: Dimensions.get('window').height/60,
+    marginBottom: Dimensions.get('window').height/60,
+  }
+}
+
 const CalculatorSelectorView = React.createClass({
   propTypes: {
     navigator: PropTypes.object.isRequired
@@ -54,34 +67,34 @@ const CalculatorSelectorView = React.createClass({
         <View onLayout={(event) => this.measureView(event)}>
           <HeaderContainer navigator={this.props.navigator}/>
         </View>
-        <View style={[styles.mainBorder, {height: Dimensions.get('window').height - this.state.height - 10}]}>
-          <View>
-            <View style={[styles.imageContainer, styles.imageContainerFirst]}>
+        <View style={[styles.mainBorder, {height: Dimensions.get('window').height - this.state.height - 30}]}>
+          <View style={inlineStyles.container}>
+            <View style={[inlineStyles.imageContainer]}>
               <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Borrow')}>
                 <Image
                   style={styles.mainButton}
                   source={require('../../../images/borrow-button.png')}
                 />
               </TouchableHighlight>
-              <Text style={styles.mainText}>How much can I borrow?</Text>
+              <Text style={[styles.mainText, inlineStyles.mainText]}>How much can I borrow?</Text>
             </View>
-            <View style={styles.imageContainer}> 
+            <View style={inlineStyles.imageContainer}> 
               <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={this._onPressButtonTwo}>
                 <Image
                   style={styles.mainButton}
                   source={require('../../../images/repayments-button.png')}
                 />
               </TouchableHighlight>
-              <Text style={styles.mainText}>What are my repayments?</Text>
+              <Text style={[styles.mainText, inlineStyles.mainText]}>What are my repayments?</Text>
             </View>
-            <View style={[styles.imageContainer, styles.imageContainerLast]}>
+            <View style={[inlineStyles.imageContainer, styles.imageContainerLast]}>
               <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={this._onPressButtonThree}>
                 <Image
                   style={styles.mainButton}
                   source={require('../../../images/stamp-duty-button.png')}
                 />
               </TouchableHighlight>
-              <Text style={styles.mainText}>What is my stamp duty?</Text>
+              <Text style={[styles.mainText, inlineStyles.mainText]}>What is my stamp duty?</Text>
             </View>
           </View>
         </View>

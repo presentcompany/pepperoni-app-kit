@@ -9,11 +9,17 @@ import {
 } from 'react-native';
 
 import CalculatorVerificationContainer from '../../calculator-verification/CalculatorVerificationContainer';
+import * as BorrowState from '../main/BorrowState';
 
 const CalculatorLoadView = React.createClass({
 
   propTypes: {
-    page: PropTypes.number.isRequired
+    page: PropTypes.number.isRequired,
+    borrow: PropTypes.object.isRequired,
+  },
+
+  componentDidMount() {
+    console.log(this.props);
   },
 
   _onPressButton() {

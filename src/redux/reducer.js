@@ -3,6 +3,7 @@ import {combineReducers} from 'redux-loop';
 import NavigationStateReducer from '../modules/navigation/NavigationState';
 import CalculatorStateReducer from '../modules/screens/calculator/CalculatorState';
 import PageStateReducer from '../modules/page/PageState';
+import BorrowStateReducer from '../modules/screens/borrow/main/BorrowState';
 import SessionStateReducer, {RESET_STATE} from '../modules/session/SessionState';
 
 const reducers = {
@@ -15,7 +16,9 @@ const reducers = {
 
   session: SessionStateReducer,
 
-  calculator: CalculatorStateReducer
+  calculator: CalculatorStateReducer,
+
+  borrow: BorrowStateReducer,
 
 };
 

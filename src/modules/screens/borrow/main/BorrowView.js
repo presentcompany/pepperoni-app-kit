@@ -15,7 +15,7 @@ import initstyles from '../../../../styles.js';
 import * as PageState from '../../../page/PageState';
 import HeaderContainer from '../../../header/HeaderContainer';
 import LayoutBorderContainer from '../../../layoutborder/LayoutBorderContainer';
-import CalculatorLoadContainer from '../load/LoadContainer';
+import LoanTypeContainer from '../loanType/LoanTypeContainer';
 import CalculatorContainer from '../../calculator/CalculatorContainer';
 import CalculatorResultsContainer from '../results/ResultsContainer';
 
@@ -54,7 +54,7 @@ const BorrowView = React.createClass({
             loop={false}
             onMomentumScrollEnd = {this._onMomentumScrollEnd}>
             <View style={styles.slide2}>
-              <CalculatorLoadContainer />
+              <LoanTypeContainer />
             </View>
             <View style={styles.slide4}>
               <CalculatorContainer />

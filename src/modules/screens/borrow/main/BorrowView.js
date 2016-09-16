@@ -53,16 +53,16 @@ const BorrowView = React.createClass({
             showsButtons={false} 
             loop={false}
             onMomentumScrollEnd = {this._onMomentumScrollEnd}>
-            <View style={styles.slide2}>
+            <View style={styles.slide}>
               <LoanTypeContainer />
             </View>
-            <View style={styles.slide4}>
+            <View style={styles.slide}>
+              <ApplicationTypeContainer />
+            </View>
+            <View style={styles.slide}>
               <CalculatorContainer />
             </View>
-            <View style={styles.slide5}>
-              <CalculatorContainer />
-            </View>
-            <View style={styles.slide3}>
+            <View style={styles.slide}>
               <ScrollView showsVerticalScrollIndicator={false}>
                 <CalculatorResultsContainer />
               </ScrollView>
@@ -85,30 +85,13 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  slide2: {
+  slide: {
     flex: 1,
     marginLeft: -24,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  slide3: {
-    flex: 1,
-    marginLeft: -24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  slide4: {
-    flex: 1,
-    marginLeft: -24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  slide5: {
-    flex: 1,
-    marginLeft: -24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+
   text: {
     color: '#fff',
     fontSize: 30,

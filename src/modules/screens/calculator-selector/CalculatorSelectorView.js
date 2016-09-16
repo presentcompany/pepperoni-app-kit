@@ -10,6 +10,7 @@ import {
 
 import styles from '../../../styles.js';
 import HeaderContainer from '../../header/HeaderContainer';
+import Dimensions from 'Dimensions';
 
 const CalculatorSelectorView = React.createClass({
   propTypes: {
@@ -29,14 +30,32 @@ const CalculatorSelectorView = React.createClass({
       console.log("Stamp duty tapped");
   },
 
+  getInitialState() {
+    return {
+      x: '',
+      y: '',
+      width: '',
+      height: ''
+    }
+  },
+
+  measureView(event) {
+    this.setState({
+        x: event.nativeEvent.layout.x,
+        y: event.nativeEvent.layout.y,
+        width: event.nativeEvent.layout.width,
+        height: event.nativeEvent.layout.height
+    })
+  },
+
   render() {
     return (
       <View style={styles.mainBackground}>
-        <View>
+        <View onLayout={(event) => this.measureView(event)}>
           <HeaderContainer navigator={this.props.navigator}/>
         </View>
-        <View>
-          <View style={[styles.mainBorder]}>
+        <View style={[styles.mainBorder, {height: Dimensions.get('window').height - this.state.height - 10}]}>
+          <View>
             <View style={[styles.imageContainer, styles.imageContainerFirst]}>
               <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Borrow')}>
                 <Image

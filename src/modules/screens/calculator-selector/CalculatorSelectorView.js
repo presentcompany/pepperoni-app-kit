@@ -67,7 +67,7 @@ const CalculatorSelectorView = React.createClass({
         <View onLayout={(event) => this.measureView(event)}>
           <HeaderContainer navigator={this.props.navigator}/>
         </View>
-        <View style={[styles.mainBorder, {height: Dimensions.get('window').height - this.state.height - 30}]}>
+        <View style={[styles.mainBorder, {height: Dimensions.get('window').height - this.state.height - 20}]}>
           <View style={inlineStyles.container}>
             <View style={[inlineStyles.imageContainer]}>
               <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Borrow')}>

@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 
 import CalculatorVerificationContainer from '../calculator-verification/CalculatorVerificationContainer';
+import Dimensions from 'Dimensions';
+
 
 const CalculatorView = React.createClass({
 
@@ -31,18 +33,18 @@ const CalculatorView = React.createClass({
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <View style={styles.verficationContainer}>
           <CalculatorVerificationContainer  />
         </View>
-        <View>
+        <View style={styles.taxContainer}>
           <Text style={styles.text}>What is your annual</Text>
           <Text style={styles.text}>income before tax?</Text>
           <View style={[styles.income, styles.margin]}>
             <Text style={styles.text}>${this.props.calculator}</Text>
           </View>
         </View>
-        <View>
+        <View style={styles.calcContainer}>
           <View style={styles.rowContainer}>
             <TouchableHighlight style={styles.headerHomeButton} underlayColor='rgba(0,0,0,0)' onPress={() => this._updateValue(1)}>
               <View style={[styles.button, styles.margin]}>
@@ -113,8 +115,15 @@ const CalculatorView = React.createClass({
 });
 
 var styles = StyleSheet.create({
+  headerHomeButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   rowContainer: {
+    width: Dimensions.get('window').width,
     flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   margin: {
     marginLeft: 3,
@@ -124,7 +133,7 @@ var styles = StyleSheet.create({
   button: {
     flex: 1,
     height: 70,
-    width: 101,
+    width: Dimensions.get('window').width/4,
     backgroundColor: '#76CA44',
     marginLeft: 3,
     marginRight: 3,
@@ -135,8 +144,8 @@ var styles = StyleSheet.create({
   income: {
     flex: 1,
     height: 70,
+    width: Dimensions.get('window').width - 40,
     backgroundColor: '#1989B2',
-    marginLeft: 3,
     paddingRight: 13,
     marginTop: 9,
     justifyContent: 'center',
@@ -145,7 +154,7 @@ var styles = StyleSheet.create({
   zeroButton: {
     flex: 2,
     height: 70,
-    width: 208,
+    width: Dimensions.get('window').width/2 + 6,
     backgroundColor: '#76CA44',
     justifyContent: 'center',
     alignItems: 'center',
@@ -153,7 +162,7 @@ var styles = StyleSheet.create({
   cancelButton: {
     flex: 1,
     height: 70,
-    width: 101,
+    width: Dimensions.get('window').width/4,
     backgroundColor: '#D7453B',
     justifyContent: 'center',
     alignItems: 'center',
@@ -171,9 +180,29 @@ var styles = StyleSheet.create({
     textAlign: 'right',
   },
   verficationContainer: {
-    marginTop: 40,
-    marginBottom: -40,
-  }
+    width: Dimensions.get('window').width,
+    justifyContent: 'center',
+  },
+  calcContainer: {
+    flex: 1,
+    width: Dimensions.get('window').width,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  container: {
+    flex: 1,
+    height: Dimensions.get('window').height,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 74,
+  },
+  taxContainer: {
+    width: Dimensions.get('window').width,
+    paddingTop: 10,
+    marginBottom: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default CalculatorView;

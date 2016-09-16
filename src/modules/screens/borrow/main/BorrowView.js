@@ -18,6 +18,8 @@ import LayoutBorderContainer from '../../../layoutborder/LayoutBorderContainer';
 import CalculatorLoadContainer from '../load/LoadContainer';
 import CalculatorContainer from '../../calculator/CalculatorContainer';
 import CalculatorResultsContainer from '../results/ResultsContainer';
+import Dimensions from 'Dimensions';
+
 
 const BorrowView = React.createClass({
 
@@ -42,33 +44,58 @@ const BorrowView = React.createClass({
     this.refs.swiper.scrollBy(newPage);
   },
 
+  getInitialState() {
+    return {
+      x: '',
+      y: '',
+      width: '',
+      height: ''
+    }
+  },
+
+  measureView(event) {
+    console.log('event peroperties: ', event);
+    this.setState({
+        x: event.nativeEvent.layout.x,
+        y: event.nativeEvent.layout.y,
+        width: event.nativeEvent.layout.width,
+        height: event.nativeEvent.layout.height
+    });
+    console.log('height: ', this.state.height);
+  },
+
   render() {
     return (
-      <View style={[ initstyles.mainBackground]}>
-        <HeaderContainer navigator={this.props.navigator}/>
-        <LayoutBorderContainer navigator={this.props.navigator}>
-          <Swiper 
-            ref='swiper' 
-            style={initstyles.wrapper} 
-            showsButtons={false} 
-            loop={false}
-            onMomentumScrollEnd = {this._onMomentumScrollEnd}>
-            <View style={styles.slide2}>
-              <CalculatorLoadContainer />
-            </View>
-            <View style={styles.slide4}>
-              <CalculatorContainer />
-            </View>
-            <View style={styles.slide5}>
-              <CalculatorContainer />
-            </View>
-            <View style={styles.slide3}>
-              <ScrollView showsVerticalScrollIndicator={false}>
-                <CalculatorResultsContainer />
-              </ScrollView>
-            </View>
-          </Swiper>
-        </LayoutBorderContainer>
+      <View style={[initstyles.mainBackground]}>
+        <View onLayout={(event) => this.measureView(event)}>
+          <HeaderContainer navigator={this.props.navigator}/>
+        </View>
+        <View style={{height: Dimensions.get('window').height - this.state.height - 10}}>
+          <LayoutBorderContainer navigator={this.props.navigator}>
+            <Swiper 
+              ref='swiper' 
+              style={[initstyles.wrapper, {height: Dimensions.get('window').height - this.state.height - 10}]} 
+              showsButtons={false} 
+              loop={false}
+              onMomentumScrollEnd = {this._onMomentumScrollEnd}
+              >
+              <View style={[styles.slide2]} viewHeight={this.state.height}>
+                <CalculatorLoadContainer />
+              </View>
+              <View style={styles.slide4}>
+                <CalculatorContainer />
+              </View>
+              <View style={styles.slide5}>
+                <CalculatorContainer />
+              </View>
+              <View style={styles.slide3}>
+                <ScrollView showsVerticalScrollIndicator={false}>
+                  <CalculatorResultsContainer />
+                </ScrollView>
+              </View>
+            </Swiper>
+          </LayoutBorderContainer>
+        </View>
       </View>
     );
   }
@@ -80,32 +107,25 @@ var styles = StyleSheet.create({
   wrapper: {
   },
   slide1: {
-    flex: 1,
-    marginLeft: -24,
     justifyContent: 'center',
     alignItems: 'center',
   },
   slide2: {
-    flex: 1,
-    marginLeft: -24,
     justifyContent: 'center',
     alignItems: 'center',
   },
   slide3: {
     flex: 1,
-    marginLeft: -24,
     justifyContent: 'center',
     alignItems: 'center',
   },
   slide4: {
     flex: 1,
-    marginLeft: -24,
     justifyContent: 'center',
     alignItems: 'center',
   },
   slide5: {
     flex: 1,
-    marginLeft: -24,
     justifyContent: 'center',
     alignItems: 'center',
   },

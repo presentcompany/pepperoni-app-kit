@@ -30,7 +30,7 @@ const HomeView = React.createClass({
             style={[inlineStyles.oxygenLogo]}
             source={require('../../images/oxygen_logo_white.png')}
           />
-          <Text style={[inlineStyles.text, inlineStyles.bylineMargin]}>Home loads made simple.</Text>
+          <Text style={[inlineStyles.text, inlineStyles.bylineMargin]}>Home loans made simple.</Text>
           <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Broker')}>
             <View style={inlineStyles.brokerStyles}>
               <Image 

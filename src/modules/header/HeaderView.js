@@ -21,7 +21,7 @@ const HeaderView = React.createClass({
 
   render() {
     return (
-      <View style={styles.header}>
+      <View style={styles.header} >
         <View style={styles.flexContainer}>
           <TouchableHighlight 
             onPress={()=>this._navigate('Home')}

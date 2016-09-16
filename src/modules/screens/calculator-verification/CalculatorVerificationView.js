@@ -46,20 +46,19 @@ const CalculatorVerificationView = React.createClass({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: -100,
-    marginBottom: 40,
+    height: 40,
   },
   shareIcon: {
     position: 'absolute',
     top: 0,
-    left: 0,
+    left: 20,
     width: 33, 
     height: 32,
   },
   tick: {
     position: 'absolute',
     top: 0,
-    right: 0,
+    right: 20,
   }
 });
 

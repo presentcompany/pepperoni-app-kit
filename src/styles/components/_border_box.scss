@@ -6,3 +6,20 @@
 .wrapper {
 	margin-top: -12px;
 }
+
+.mainBorder {
+	flex: 1;
+	margin: 0 10px 10px;
+	border: 2px solid $c-white;
+	border-radius: 15px;
+}
+
+.mainBorder {
+	flex: 1;
+	margin: 0 10px 10px;
+	border: 2px solid $c-white;
+	border-radius: 15px;
+	justify-content: center;
+	align-items: center;
+}
+

@@ -17,6 +17,7 @@ import HeaderContainer from '../../../header/HeaderContainer';
 import LayoutBorderContainer from '../../../layoutborder/LayoutBorderContainer';
 import LoanTypeContainer from '../loanType/LoanTypeContainer';
 import ApplicationTypeContainer from '../applicationType/ApplicationTypeContainer';
+import DependantsContainer from '../dependants/DependantsContainer';
 import CalculatorContainer from '../../calculator/CalculatorContainer';
 import CalculatorResultsContainer from '../results/ResultsContainer';
 
@@ -59,6 +60,9 @@ const BorrowView = React.createClass({
             </View>
             <View style={styles.slide}>
               <ApplicationTypeContainer />
+            </View>
+            <View style={styles.slide}>
+              <DependantsContainer />
             </View>
             <View style={styles.slide}>
               <CalculatorContainer />

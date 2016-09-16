@@ -12,16 +12,24 @@ import CalculatorVerificationContainer from '../../calculator-verification/Calcu
 import * as BorrowState from '../main/BorrowState';
 import * as PageState from '../../../page/PageState';
 
-const ApplicationTypeView = React.createClass({
+const DependantsView = React.createClass({
 
   propTypes: {
     page: PropTypes.number.isRequired,
     borrow: PropTypes.object.isRequired,
   },
 
-  _updateLoanType(applicationType) {
+  dependants: [
+    {'number': 0, 'text': 'None'},
+    {'number': 1, 'text': 'One'},
+    {'number': 2, 'text': 'Two'},
+    {'number': 3, 'text': 'Three'},
+    {'number': 4, 'text': 'Four or more'}
+  ],
+
+  _updateDependants(dependants) {
     let borrow = this.props.borrow;
-    borrow.applicationType = applicationType;
+    borrow.dependants = dependants;
 
     this.props.dispatch(BorrowState.change({
       borrow: borrow
@@ -40,26 +48,22 @@ const ApplicationTypeView = React.createClass({
         </View> 
         <View style={styles.questionContainer}>  
           <View>
-            <Text style={styles.text}>Application Type</Text>
+            <Text style={styles.text}>Number of Dependants</Text>
           </View>
-          <TouchableHighlight
-            style={styles.headerHomeButton}
-            underlayColor='rgba(0,0,0,0)'
-            onPress={()=>this._updateLoanType('single')}
-          >
-            <View style={styles.view}>
-              <Text style={styles.text}>Single</Text>
-            </View>
-          </TouchableHighlight>
-          <TouchableHighlight
-            style={styles.headerHomeButton}
-            underlayColor='rgba(0,0,0,0)'
-            onPress={()=>this._updateLoanType('joint')}
-          >
-            <View style={styles.view}>
-              <Text style={styles.text}>Joint</Text>
-            </View>
-          </TouchableHighlight>
+          {this.dependants.map((dependant, index) => {
+            return (
+              <TouchableHighlight
+                key={dependant.number}
+                style={styles.headerHomeButton}
+                underlayColor='rgba(0,0,0,0)'
+                onPress={()=>this._updateDependants(dependant.number)}
+              >
+                <View style={styles.view}>
+                  <Text style={styles.text}>{dependant.text}</Text>
+                </View>
+              </TouchableHighlight>
+            );
+          })}
         </View>
       </View>
     );
@@ -92,4 +96,4 @@ var styles = StyleSheet.create({
   }
 });
 
-export default ApplicationTypeView;
+export default DependantsView;

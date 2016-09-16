@@ -33,7 +33,7 @@ const CalculatorView = React.createClass({
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container} ref='container'>
         <View style={styles.verficationContainer}>
           <CalculatorVerificationContainer  />
         </View>
@@ -132,7 +132,7 @@ var styles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    height: 70,
+    height: Dimensions.get('window').height/9.5,
     width: Dimensions.get('window').width/4,
     backgroundColor: '#76CA44',
     marginLeft: 3,
@@ -143,7 +143,7 @@ var styles = StyleSheet.create({
   },
   income: {
     flex: 1,
-    height: 70,
+    height: Dimensions.get('window').height/9.5,
     width: Dimensions.get('window').width - 40,
     backgroundColor: '#1989B2',
     paddingRight: 13,
@@ -153,7 +153,7 @@ var styles = StyleSheet.create({
   },
   zeroButton: {
     flex: 2,
-    height: 70,
+    height: Dimensions.get('window').height/9.5,
     width: Dimensions.get('window').width/2 + 6,
     backgroundColor: '#76CA44',
     justifyContent: 'center',
@@ -161,7 +161,7 @@ var styles = StyleSheet.create({
   },
   cancelButton: {
     flex: 1,
-    height: 70,
+    height: Dimensions.get('window').height/9.5,
     width: Dimensions.get('window').width/4,
     backgroundColor: '#D7453B',
     justifyContent: 'center',
@@ -191,10 +191,10 @@ var styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    height: Dimensions.get('window').height,
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 74,
+    paddingBottom: 44
   },
   taxContainer: {
     width: Dimensions.get('window').width,

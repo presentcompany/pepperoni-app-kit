@@ -64,6 +64,8 @@ var inlineStyles = StyleSheet.create({
     alignItems: 'center',
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
+    paddingLeft: 20,
+    paddingRight: 20,
   },
   text: {
     color: '#fff',
@@ -77,7 +79,7 @@ var inlineStyles = StyleSheet.create({
   income: {
     height: 60,
     backgroundColor: '#1989B2',
-    width: 315,
+    width: Dimensions.get('window').width/1.2,
     marginTop: 10,
     marginBottom: 10,
     justifyContent: 'center',
@@ -87,7 +89,7 @@ var inlineStyles = StyleSheet.create({
   brokerStyles: {
     backgroundColor: '#76CA44',
     height: 60,
-    width: 315,
+    width: Dimensions.get('window').width/1.2,
     marginTop: 10,
     marginBottom: 10,
     justifyContent: 'center',

@@ -10,7 +10,10 @@ const initialState = {
     valid: false,
     value: 0
   },
-  incomeOther: 0,
+  otherIncome: {
+    valid: false,
+    value: 0
+  },
   expenses: {
     estimate: 0,
     personal: 0,
@@ -25,6 +28,8 @@ const initialState = {
 const CHANGE = 'BorrowState/CHANGE';
 const RESET = 'BorrowState/RESET';
 const UPDATE_INCOME = 'BorrowState/UPDATE_INCOME';
+const UPDATE_OTHER_INCOME = 'BorrowState/UPDATE_OTHER_INCOME';
+
 // Action creators
 export function change(state) {
   return {
@@ -33,11 +38,17 @@ export function change(state) {
   };
 }
 
-// Action creators
 export function updateIncome(state) {
   return {
     type: UPDATE_INCOME,
     annualIncome: state.annualIncome
+  };
+}
+
+export function updateOtherIncome(state) {
+  return {
+    type: UPDATE_OTHER_INCOME,
+    otherIncome: state.otherIncome
   };
 }
 
@@ -56,6 +67,10 @@ export default function BorrowStateReducer(state = initialState, action = {}) {
 
     case UPDATE_INCOME:
       return Object.assign({}, state, action.annualIncome);
+
+    case UPDATE_OTHER_INCOME:
+      return Object.assign({}, state, action.otherIncome);
+
     default:
       return state;
   }

@@ -18,6 +18,10 @@ const CalculatorVerificationView = React.createClass({
   _onPressButton(direction) {
 
     if (this.props.page !== 0) {
+      if (!this.props.tick && direction === 'next') {
+        return false;
+      }
+
       direction = (direction === 'next') ? 1 : -1;
       this.props.dispatch(PageState.change({
         page: this.props.page + direction
@@ -36,11 +40,12 @@ const CalculatorVerificationView = React.createClass({
             source={require('../../../images/arrow-return.png')}
           />
         </TouchableHighlight>
-        <TouchableHighlight>
+        <TouchableHighlight
+          onPress={()=>this._onPressButton('next')}
+        >
           {this.props.tick ? (
             <Image
               style={styles.tick}
-              onPress={()=>this._onPressButton('next')}
               source={require('../../../images/tick-active.png')}
             />
           ):

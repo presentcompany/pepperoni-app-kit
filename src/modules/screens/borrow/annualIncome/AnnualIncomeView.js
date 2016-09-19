@@ -21,27 +21,28 @@ const AnnualIncomeView = React.createClass({
   },
 
   _updateAnnualIncome(income) {
-    let borrow = this.props.borrow;
-    borrow.AnnualIncome = income;
+    const obj = {
+      annualIncome: {},
+    };
 
-    if (income !== '') {
-      console.log(income);
+    obj.annualIncome.value = income.text;
+
+    if (income.text !== '') {
+      obj.annualIncome.valid = true;
+    } else {
+      obj.annualIncome.valid = false;
     }
 
-    // this.props.dispatch(BorrowState.change({
-    //   borrow: borrow
-    // }));
-
-    // this.props.dispatch(PageState.change({
-    //   page: this.props.page + 1
-    // }));
+    this.props.dispatch(BorrowState.updateIncome({
+      annualIncome: obj
+    }));
   },
 
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.verficationContainer}>
-          <CalculatorVerificationContainer />
+          <CalculatorVerificationContainer tick={this.props.borrow.annualIncome.valid}/>
         </View> 
         <View style={styles.questionContainer}>
           <View>

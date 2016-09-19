@@ -35,10 +35,17 @@ const CalculatorVerificationView = React.createClass({
           />
         </TouchableHighlight>
         <TouchableHighlight>
-          <Image
-            style={styles.tick}
-            source={require('../../../images/tick-inactive.png')}
-          />
+          {this.props.tick ? (
+            <Image
+              style={styles.tick}
+              source={require('../../../images/tick-active.png')}
+            />
+          ):
+            <Image
+              style={styles.tick}
+              source={require('../../../images/tick-inactive.png')}
+            />
+          }
         </TouchableHighlight>
       </View>
     );

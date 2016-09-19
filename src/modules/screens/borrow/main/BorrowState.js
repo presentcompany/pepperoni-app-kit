@@ -6,7 +6,10 @@ const initialState = {
   loanType: '',
   applicationType: '',
   dependants: 0,
-  incomeAnnual: 0,
+  annualIncome: {
+    valid: false,
+    value: 0
+  },
   incomeOther: 0,
   expenses: {
     estimate: 0,
@@ -21,12 +24,20 @@ const initialState = {
 // Actions
 const CHANGE = 'BorrowState/CHANGE';
 const RESET = 'BorrowState/RESET';
-
+const UPDATE_INCOME = 'BorrowState/UPDATE_INCOME';
 // Action creators
 export function change(state) {
   return {
     type: CHANGE,
     borrow: state.borrow
+  };
+}
+
+// Action creators
+export function updateIncome(state) {
+  return {
+    type: UPDATE_INCOME,
+    annualIncome: state.annualIncome
   };
 }
 
@@ -43,6 +54,8 @@ export default function BorrowStateReducer(state = initialState, action = {}) {
     case RESET:
       return initialState;
 
+    case UPDATE_INCOME:
+      return Object.assign({}, state, action.annualIncome);
     default:
       return state;
   }

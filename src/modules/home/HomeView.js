@@ -11,6 +11,7 @@ import Dimensions from 'Dimensions';
 import styles from '../../styles.js';
 import FlexContainer from '../../components/FlexContainer';
 import BrokerButton from '../../components/buttons/BrokerButton';
+import CalculatorButton from '../../components/buttons/CalculatorButton';
 
 const HomeView = React.createClass({
 
@@ -32,17 +33,8 @@ const HomeView = React.createClass({
           source={require('../../images/oxygen_logo_white.png')}
         />
         <Text style={[inlineStyles.text, inlineStyles.bylineMargin]}>Home loans made simple.</Text>
-        
         <BrokerButton navigator={this.props.navigator} />
-        <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Calculators')}>
-          <View style={inlineStyles.income}>
-            <Image 
-              style={inlineStyles.loanLogo}
-              source={require('../../images/loan_calculator_logo.png')}
-            />
-            <Text style={inlineStyles.text}>Loan Calculators</Text>
-          </View>
-        </TouchableHighlight>
+        <CalculatorButton navigator={this.props.navigator} />
       </FlexContainer>
     );
   }
@@ -58,25 +50,9 @@ var inlineStyles = StyleSheet.create({
   bylineMargin: {
     marginBottom: 30,
   },
-  income: {
-    height: 60,
-    backgroundColor: '#1989B2',
-    width: Dimensions.get('window').width/1.2,
-    marginTop: 10,
-    marginBottom: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row'
-  },
-  loanLogo: {
-    width: 26,
-    height: 30,
-    marginRight: 10,
-  },
   oxygenLogo: {
     marginBottom: 10,
   }
-
 });
 
 export default HomeView;

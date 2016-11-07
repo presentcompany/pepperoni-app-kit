@@ -1,8 +1,6 @@
 import React, {PropTypes, Component} from 'react';
 import {
-  Text,
   View,
-  TouchableOpacity,
   StyleSheet
 } from 'react-native';
 import Dimensions from 'Dimensions';

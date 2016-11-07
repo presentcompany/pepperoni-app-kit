@@ -10,6 +10,7 @@ import {
 import Dimensions from 'Dimensions';
 import styles from '../../styles.js';
 import FlexContainer from '../../components/FlexContainer';
+import BrokerButton from '../../components/buttons/BrokerButton';
 
 const HomeView = React.createClass({
 
@@ -31,15 +32,8 @@ const HomeView = React.createClass({
           source={require('../../images/oxygen_logo_white.png')}
         />
         <Text style={[inlineStyles.text, inlineStyles.bylineMargin]}>Home loans made simple.</Text>
-        <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Broker')}>
-          <View style={inlineStyles.brokerStyles}>
-            <Image 
-              style={inlineStyles.brokerIcon}
-              source={require('../../images/find_broker_icon.png')}
-            />
-            <Text style={inlineStyles.text}>Find A Broker</Text>
-          </View>
-        </TouchableHighlight>
+        
+        <BrokerButton navigator={this.props.navigator} />
         <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Calculators')}>
           <View style={inlineStyles.income}>
             <Image 
@@ -73,21 +67,6 @@ var inlineStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row'
-  },
-  brokerStyles: {
-    backgroundColor: '#76CA44',
-    height: 60,
-    width: Dimensions.get('window').width/1.2,
-    marginTop: 10,
-    marginBottom: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row'
-  },
-  brokerIcon: {
-    width: 34,
-    height: 33,
-    marginRight: 10,
   },
   loanLogo: {
     width: 26,

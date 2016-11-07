@@ -9,6 +9,7 @@ import {
 
 import Dimensions from 'Dimensions';
 import styles from '../../styles.js';
+import FlexContainer from '../../components/FlexContainer';
 
 const HomeView = React.createClass({
 
@@ -24,49 +25,36 @@ const HomeView = React.createClass({
 
   render() {
     return (
-      <View style={styles.mainBackground}>
-        <View style={inlineStyles.flexContainer}>
-          <Image 
-            style={[inlineStyles.oxygenLogo]}
-            source={require('../../images/oxygen_logo_white.png')}
-          />
-          <Text style={[inlineStyles.text, inlineStyles.bylineMargin]}>Home loans made simple.</Text>
-          <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Broker')}>
-            <View style={inlineStyles.brokerStyles}>
-              <Image 
-                style={inlineStyles.brokerIcon}
-                source={require('../../images/find_broker_icon.png')}
-              />
-              <Text style={inlineStyles.text}>Find A Broker</Text>
-            </View>
-          </TouchableHighlight>
-          <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Calculators')}>
-            <View style={inlineStyles.income}>
-              <Image 
-                style={inlineStyles.loanLogo}
-                source={require('../../images/loan_calculator_logo.png')}
-              />
-              <Text style={inlineStyles.text}>Loan Calculators</Text>
-            </View>
-          </TouchableHighlight>
-        </View>
-      </View>
+      <FlexContainer>
+        <Image 
+          style={[inlineStyles.oxygenLogo]}
+          source={require('../../images/oxygen_logo_white.png')}
+        />
+        <Text style={[inlineStyles.text, inlineStyles.bylineMargin]}>Home loans made simple.</Text>
+        <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Broker')}>
+          <View style={inlineStyles.brokerStyles}>
+            <Image 
+              style={inlineStyles.brokerIcon}
+              source={require('../../images/find_broker_icon.png')}
+            />
+            <Text style={inlineStyles.text}>Find A Broker</Text>
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight underlayColor='rgba(0,0,0,0)' onPress={()=>this._navigate('Calculators')}>
+          <View style={inlineStyles.income}>
+            <Image 
+              style={inlineStyles.loanLogo}
+              source={require('../../images/loan_calculator_logo.png')}
+            />
+            <Text style={inlineStyles.text}>Loan Calculators</Text>
+          </View>
+        </TouchableHighlight>
+      </FlexContainer>
     );
   }
 });
 
 var inlineStyles = StyleSheet.create({
-  mainBackground: {
-    backgroundColor: '#22B7EE',
-  },
-  flexContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
   text: {
     color: '#fff',
     fontSize: 22,

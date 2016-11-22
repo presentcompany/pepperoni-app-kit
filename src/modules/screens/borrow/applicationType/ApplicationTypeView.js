@@ -85,8 +85,8 @@ var styles = StyleSheet.create({
   },
   questionContainer: {
     flex: 1, 
-    height: Dimensions.get('window').height - 114, 
-    marginTop: - 47, 
+    height: Dimensions.get('window').height - 161,
+    marginBottom: 47, 
     justifyContent: 'center', 
     alignItems: 'center',
   },

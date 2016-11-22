@@ -3,7 +3,7 @@ import {
   Text,
   Image,
   Switch, 
-  TouchableHighlight, 
+  TextInput,
   View, 
   StyleSheet
 } from 'react-native';
@@ -13,31 +13,28 @@ import * as BorrowState from '../main/BorrowState';
 import * as PageState from '../../../page/PageState';
 import Dimensions from 'Dimensions'; 
 
-const DependantsView = React.createClass({
+const OtherIncomeView = React.createClass({
 
   propTypes: {
     page: PropTypes.number.isRequired,
     borrow: PropTypes.object.isRequired,
   },
 
-  dependants: [
-    {'number': 0, 'text': 'None'},
-    {'number': 1, 'text': 'One'},
-    {'number': 2, 'text': 'Two'},
-    {'number': 3, 'text': 'Three'},
-    {'number': 4, 'text': 'Four or more'}
-  ],
+  _updateOtherIncome(income) {
+    const obj = {
+      otherIncome: {},
+    };
 
-  _updateDependants(dependants) {
-    let borrow = this.props.borrow;
-    borrow.dependants = dependants;
+    obj.otherIncome.value = income.text;
 
-    this.props.dispatch(BorrowState.change({
-      borrow: borrow
-    }));
+    if (income.text !== '') {
+      obj.otherIncome.valid = true;
+    } else {
+      obj.otherIncome.valid = false;
+    }
 
-    this.props.dispatch(PageState.change({
-      page: this.props.page + 1
+    this.props.dispatch(BorrowState.updateOtherIncome({
+      otherIncome: obj
     }));
   },
 
@@ -45,26 +42,21 @@ const DependantsView = React.createClass({
     return (
       <View style={styles.container}>
         <View style={styles.verficationContainer}>
-          <CalculatorVerificationContainer />
+          <CalculatorVerificationContainer tick={this.props.borrow.otherIncome.valid}/>
         </View> 
-        <View style={styles.questionContainer}>  
+        <View style={styles.questionContainer}>
           <View>
-            <Text style={styles.text}>Number of Dependants</Text>
+            <Text style={styles.text}>Other Income</Text>
           </View>
-          {this.dependants.map((dependant, index) => {
-            return (
-              <TouchableHighlight
-                style={styles.headerHomeButton}
-                key={dependant.number}
-                underlayColor='rgba(0,0,0,0)'
-                onPress={()=>this._updateDependants(dependant.number)}
-              >
-                 <View style={styles.view}>
-                  <Text style={styles.text}>{dependant.text}</Text>
-                </View>
-              </TouchableHighlight>
-            );
-          })}
+          <View style={{flexDirection:'row'}}>
+            <View style={{flex:0.2}}></View>
+            <TextInput
+              style={styles.textInput}
+              keyboardType='numbers-and-punctuation'
+              onChangeText={(text) => this._updateOtherIncome({text})}
+            />
+            <View style={{flex:0.2}}></View>
+          </View>
         </View>
       </View>
     );
@@ -87,6 +79,16 @@ var styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  textInput: {
+    height: 40,
+    flex: 0.8,
+    color: '#000',
+    backgroundColor: '#fff',
+    fontSize: 24,
+    marginTop: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
   questionContainer: {
     flex: 1, 
     height: Dimensions.get('window').height - 161,
@@ -105,4 +107,4 @@ var styles = StyleSheet.create({
   }
 });
 
-export default DependantsView;
+export default OtherIncomeView;

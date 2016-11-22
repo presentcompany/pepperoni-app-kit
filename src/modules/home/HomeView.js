@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import Dimensions from 'Dimensions';
-import styles from '../../styles.js';
+import mainViewStyles from '../../styles/modules/_main_view.js';
 
 const HomeView = React.createClass({
 
@@ -24,7 +24,7 @@ const HomeView = React.createClass({
 
   render() {
     return (
-      <View style={styles.mainBackground}>
+      <View style={mainViewStyles.mainBackground}>
         <View style={inlineStyles.flexContainer}>
           <Image 
             style={[inlineStyles.oxygenLogo]}

@@ -9,13 +9,13 @@ import {
   ScrollView
 } from 'react-native';
 
-import initstyles from '../../styles.js';
+import mainViewStyles from '../../styles/modules/_main_view.js';
 
 const LayoutBorderView = React.createClass({
 
   render() {
     return (
-      <View style={[initstyles.mainBorder]}>
+      <View style={[mainViewStyles.mainBorder]}>
          {this.props.children}
       </View>
     );

@@ -104,3 +104,29 @@ This repo encompasses several new features/ideas which are referenced below:
   * In particular - [Using with React](http://redux.js.org/docs/basics/UsageWithReact.html)
 * [Architecture - General Setup](https://github.com/futurice/pepperoni-app-kit/blob/master/docs/ARCHITECTURE.md)
 * [Architecture - Further reading on Modules/Containers](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.jiyrz5bc1)
+
+# Uploading the App to the App Store
+
+## Developer Portal
+
+Head to developer.apple, login, select the section about `Identifiers` and create a new `App ID` identifier.
+
+Ensure that this identifier has the same `bundle id` as the one inside of your app. 
+
+## iTunesConnect
+
+Once this is done, ensure that you create a new App on `iTunes Connect` through the portal.
+
+## Xcode
+
+Ensure that you have an App icon, then archive the app through `Product > Archive`.
+
+Once the App is archived, you can then upload it to iTunes Connect. Select `Upload` to upload it to the store.
+
+## TestFlight
+
+For other users to use test flight, head to iTunes connect and select your app. Then, select test flight and add in the Internal/Extenal Testing emails.
+
+Select the archived version that you wish to share and then send out the invites.
+
+Invitees will need to download `Flight Test`, then redeem the code in the app that comes from the email.

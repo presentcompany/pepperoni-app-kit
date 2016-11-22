@@ -726,7 +726,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Dennis O'Keeffe (EYVW4BN3U6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EYVW4BN3U6;
 				ENABLE_NS_ASSERTIONS = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -741,7 +741,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.presco.PrescoNativeTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dennisokeeffe.PrescoNativeTemplate;
 				PRODUCT_NAME = PrescoNativeTemplate;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -756,7 +756,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Dennis O'Keeffe (EYVW4BN3U6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EYVW4BN3U6;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -771,7 +771,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.presco.PrescoNativeTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dennisokeeffe.PrescoNativeTemplate;
 				PRODUCT_NAME = PrescoNativeTemplate;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
